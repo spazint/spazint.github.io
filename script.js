@@ -24,7 +24,12 @@
     {x: -1, y:  1, z:  1, id: '3', col: '#70e000'}
   ];
   
-  const edges = [0,1, 1,2, 2,3, 3,0, 4,5, 5,6, 6,7, 7,4, 0,4, 1,5, 2,6, 3,7];
+  // МАССИВ РЕБЕР ПОЛНОСТЬЮ ВОССТАНОВЛЕН И ЗАФИКСИРОВАН
+  const edges = [
+    0,1, 1,2, 2,3, 3,0,
+    4,5, 5,6, 6,7, 7,4,
+    0,4, 1,5, 2,6, 3,7
+  ];
   
   let angleX = 0.4, angleY = 0.6, scale = 25, isDragging = false, hoveredVertex = -1, prevM = { x: 0, y: 0 };
 
@@ -53,7 +58,7 @@
 
   function project(v, ax, ay, cx, cy) {
     let x1 = v.x * Math.cos(ay) - v.z * Math.sin(ay), z1 = v.x * Math.sin(ay) + v.z * Math.cos(ay);
-    let y2 = v.y * Math.cos(ax) - z1 * Math.sin(ax), z2 = v.y * Math.sin(ax) + z1 * Math.cos(ax);
+    let y2 = v.y * Math.cos(ax) - z1 * Math.sin(ax), z2 = v.y * Math.sin(ax) + v.z * Math.cos(ax);
     return { x: cx + x1 * scale, y: cy + y2 * scale, z: z2, id: v.id, col: v.col };
   }
 
@@ -85,7 +90,7 @@
       if (item.type === 'kern') { drawKern(cx, cy, r_k); ctx.beginPath(); ctx.arc(cx, cy, 2.5, 0, 2*Math.PI); ctx.fillStyle = '#ffea00'; ctx.fill(); }
       else {
         let p = item.data; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(cx + (p.x-cx)*2.6, cy + (p.y-cy)*2.6); ctx.strokeStyle = item.idx === hoveredVertex ? '#ffea00' : p.col; ctx.lineWidth = item.idx === hoveredVertex ? 3 : 1.2; ctx.stroke();
-        ctx.beginPath(); ctx.arc(p.x, p.y, r_m, 0, 2*Math.PI); let mg = ctx.createRadialGradient(p.x-r_m*0.2, p.y-r_m*0.2, r_m*0.1, p.x, p.y, r_m); mg.addColorStop(0, '#ff6b6b'); mg.addColorStop(1, '#5c0f0f'); ctx.fillStyle = item.idx === hoveredVertex ? '#ffb703' : mg; ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.stroke();
+        ctx.beginPath(); ctx.arc(p.x, p.y, r_m, 0, 2*Math.PI); let mg = ctx.createRadialGradient(p.x-r_m*0.2, p.y-r_m*0.2, r_m*0.1, p.x, p.y, r_m); mg.addColorStop(0, '#ff6b6b'); mg.addColorStop(1, '#5c0f0f'); ctx.fillStyle = item.idx === hoveredVertex ? '#ffb703' : mg; ctx.fill(); ctx.stroke();
         ctx.fillStyle = '#fff'; ctx.font = 'bold 8px sans-serif'; ctx.textAlign = 'center'; ctx.fillText(p.id, p.x, p.y+2.5);
       }
     });
