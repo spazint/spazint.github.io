@@ -1,85 +1,141 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Позитронно-Электронно-Мюонная Модель (ПЭММ)</title>
+ <meta charset="UTF-8">
+ <title>ПЭММ — Официальный портал</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <style>
+ body { font-family: Arial, sans-serif; max-width: 1250px; margin: 30px auto; padding: 0 20px; line-height: 1.6; background: #f8f9fa; color: #202124; }
+ .header { text-align: center; padding: 20px; background: #11141a; color: #fff; border-radius: 8px; margin-bottom: 25px; }
+ .header h1 { font-size: 26px; margin: 0 0 8px 0; }
+ .header p { color: #4dadff; margin: 0; font-weight: bold; font-size: 14px; }
+ .main-layout { display: flex; gap: 25px; align-items: flex-start; }
+ .container { width: 70%; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); box-sizing: border-box; }
+ .sidebar { width: 28%; min-width: 280px; box-sizing: border-box; }
+ .warning-box { background-color: #f9f9f9; border-left: 5px solid #FF8C00; padding: 15px; margin-bottom: 25px; border-radius: 4px; font-size: 14px; }
+ h2 { color: #1a73e8; border-bottom: 2px solid #e8f0fe; padding-bottom: 6px; margin-top: 25px; font-size: 18px; font-weight: bold; }
+ ul { padding-left: 20px; margin: 10px 0; }
+ li { margin-bottom: 8px; }
+ .btn-container { margin: 15px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+ .btn { display: inline-block; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 13px; }
+ .btn-main { background: #1a73e8; color: white; }
+ .btn-sec { background: #34a853; color: white; }
+ .footer-text { font-size: 12px; color: #5f6368; border-top: 1px solid #dadce0; margin-top: 30px; padding-top: 15px; }
+ </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
-    <!-- ГЛАВНЫЙ КОНТЕЙНЕР С ЦЕНТРИРОВАНИЕМ И ЖЕСТКИМИ КРАЯМИ (МАКС 1100px) -->
-    <div style="max-width: 1100px; margin: 0 auto; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px;">
-        
-        <!-- ЗАГОЛОВОК И ОПИСАНИЕ -->
-        <h2 style="color: #000000; font-weight: bold; text-transform: uppercase; margin-top: 10px; font-size: 24px; border-bottom: 2px solid #000000; padding-bottom: 10px;">🛠️ ПОЗИТРОННО-ЭЛЕКТРОННО-МЮОННАЯ МОДЕЛЬ (ПЭММ)</h2>
+ <script src="script.js"></script>
+<body>
+ 
 
-        <p style="color: #111111; line-height: 1.6; font-size: 16px; margin: 0;">
-            <strong>Позитронно-Электронно-Мюонная Модель (ПЭММ)</strong> — это независимая, строго детерминированная физическая концепция микро- и макромира, разработанная инженером-физиком В. Р. Балтрунасом (МИФИ). Модель представляет собой фундаментальное слияние классической Позитронно-Электронной Модели (ПЭМ) Лоренца-Дирака и прецизионной Мезонной Модели (ММ) нуклона, полностью исключая вероятностные абстракции Стандартной модели.
-        </p>
+<div class="header">
+ <h1>Позитронно-Электронно-Мюонная Модель (ПЭММ)</h1>
+ <p>Фундаментальный чертеж Вселенной / Автор текста: В. Р. Балтрунас, инженер-физик (МИФИ)</p>
 
-        <!-- БЛОК НАВИГАЦИИ (КНОПКИ) -->
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 5px 0;">
-            <a href="https://github.io" style="border: 2px solid #008800; color: #008800; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; background: #f2f9f2; border-radius: 4px;">📐 ПЕРЕЙТИ НА ЛИСТ 2 (ЧЕРТЕЖ ВСЕЛЕННОЙ)</a>
-            <a href="https://google.com" target="_blank" style="border: 1px solid #000000; color: #000000; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; background: #ffffff; border-radius: 4px;">🌐 САЙТ НА GOOGLE</a>
-            <a href="https://blogspot.com" target="_blank" style="border: 1px solid #000000; color: #000000; padding: 8px 16px; text-decoration: none; font-weight: bold; font-size: 13px; background: #ffffff; border-radius: 4px;">📰 БЛОГ НА BLOGGER</a>
-        </div>
+</div>
 
-        <!-- БЛОК СКАЧИВАНИЯ ЗАПИСКИ (232 СТР.) С ОТСТУПАМИ -->
-        <div style="background-color: #f5f5f5; border-left: 5px solid #000000; padding: 20px; border-radius: 0 4px 4px 0;">
-            <h4 style="color: #000000; font-weight: bold; margin-top: 0; text-transform: uppercase; font-size: 14px; margin-bottom: 8px;">📥 СКАЧАТЬ ПОЛНУЮ ПОЯСНИТЕЛЬНУЮ ЗАПИСКУ ПЭММ (232 СТР.)</h4>
-            <p style="color: #111111; font-size: 14px; margin-top: 0; margin-bottom: 15px;">Выберите любое удобное независимое зеркало для мгновенной загрузки расчетной физико-математической модели в формате PDF:</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <a href="https://osf.io" target="_blank" style="background-color: #000000; color: #ffffff; padding: 10px 18px; text-decoration: none; font-weight: bold; font-size: 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">📥 Скачать через OSF.IO</a>
-                <a href="https://doi.org" target="_blank" style="background-color: #000000; color: #ffffff; padding: 10px 18px; text-decoration: none; font-weight: bold; font-size: 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">📚 Скачать через ZENODO (DOI)</a>
-                <a href="https://github.com" target="_blank" style="background-color: #000000; color: #ffffff; padding: 10px 18px; text-decoration: none; font-weight: bold; font-size: 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">💻 Скачать через GITHUB</a>
-            </div>
-        </div>
+<div class="main-layout">
 
-        <h3 style="color: #000000; font-weight: bold; text-transform: uppercase; margin-top: 10px; border-bottom: 1px solid #dddddd; padding-bottom: 5px; font-size: 18px;">🧭 ЛИСТ 1: ФУНДАМЕНТАЛЬНЫЕ ТЕЗИСЫ МИКРОМИРА</h3>
+ <!-- ЛЕВАЯ КОЛОНКА (ТЕКСТ) -->
+ <div class="container">
+ <div class="warning-box">
+ На данной странице представлены материалы независимого исследования в рамках альтернативной физической концепции — Позитронно-Электронно-Мюонной Модели (ПЭММ).
+ ПЭММ — это объединение позитронно-электронной модели (ПЭМ) и мезонной модели (ММ)
+ </div>
+ 
+ <div class="btn-container">
+ <a class="btn btn-main" href="https://doi.org/10.5281/zenodo.20108816" target="_blank">📋ПЭММ мини (4 стр.)</a>
+ <a class="btn btn-main" href="https://doi.org/10.5281/zenodo.19864750"_blank">📋 ПЭММ макси (232 стр.)</a>
+ <a class="btn btn-sec" href="https://sites.google.com/view/spazint" target="_blank">Сайт на google</a>
+ <a class="btn btn-sec" href="https://spazint.blogspot.com/" target="_blank">Блог на google</a>
+ <a class="btn btn-sec" href="https://spazint.ucoz.net/" target="_blank">Сайт на Яндекс</a>
+ </div>
 
-        <!-- СПИСОК ТЕЗИСОВ С СУЖЕННЫМИ ГРАНИЦАМИ СТРОК ДЛЯ УДОБСТВА ЧТЕНИЯ -->
-        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 850px;">
-            
-            <div>
-                <h4 style="color: #000000; font-weight: bold; margin-top: 0; margin-bottom: 6px; font-size: 16px;">🧬 1. Абсолютный закон сохранения: Никакой аннигиляции</h4>
-                <p style="color: #111111; line-height: 1.6; margin: 0; font-size: 15px;">Материя фундаментально не способна превращаться в чистую энергию, а энергия — в материю. Процесс так называемой «аннигиляции» позитрона (e⁺) и электрона (e⁻) — это исключительно их механическое соударное сближение под действием сил Кулона. В условиях сверхплотного сжатия они образуют жесткий электрический диполь — <strong>гамма-частицу (¥)</strong> размером 0,0025 фм, полностью сохраняя свои исходные массы и заряды. Гамма-частицы формируют скрытую Темную энергию Вселенной.</p>
-            </div>
+ <h2>Закон сохранения энергии — материя не превращается в энергию и наоборот</h2>
+ <p>В рамках ПЭММ материя не превращается в энергию. Концепция «аннигиляции» — это образование электрического диполя — гамма-частицы (тёмной энергии) из зарядов позитрона и электрона с сохранением заряда и массы в условиях сверхплотного сжатия.</p>
 
-            <div>
-                <h4 style="color: #000000; font-weight: bold; margin-top: 0; margin-bottom: 6px; font-size: 16px;">🧱 2. Три неделимых кирпичика мироздания</h4>
-                <p style="color: #111111; line-height: 1.6; margin: 0; font-size: 15px;">Вместо сотен субъядерных резонансов Стандартной модели, ПЭММ вводит всего три базовые структурные единицы с неизменными геометрическими объемами и зарядами:
-                <br>• <strong>Позитрон (e⁺):</strong> Носитель элементарного положительного заряда.
-                <br>• <strong>Электрон (e⁻):</strong> Носитель элементарного отрицательного заряда.
-                <br>• <strong>Нейтральный мюон (μ⁰):</strong> Главный материальный носитель массы и гравитационного заряда (основа Темной материи Вселенной).</p>
-            </div>
+ <h2>Фундаментальные частицы материи и взаимодействия</h2>
+ <ul>
+ <li><strong>Позитрон (e⁺)</strong> — частица с положительным зарядом.</li>
+ <li><strong>Электрон (e⁻)</strong> — частица с отрицательным зарядом.</li>
+ <li><strong>Нейтральный мюон (μ⁰)</strong> — носителем гравитационного заряда (тёмная материя).</li>
+ <li><strong>Позитронный квант (𝛾⁺)</strong> — носитель позитронного взаимодействия и энергии.</li>
+ <li><strong>Электронный квант (𝛾⁻)</strong> — носитель электронного взаимодействия и энергии.</li>
+ <li><strong>Гравитационный квант (𝛾⁰)</strong> — носитель гравитационного взаимодействия и энергии.</li>
+ </ul>
 
-            <div>
-                <h4 style="color: #000000; font-weight: bold; margin-top: 0; margin-bottom: 6px; font-size: 16px;">⚡ 3. Квантовое сырье физических полей</h4>
-                <p style="color: #111111; line-height: 1.6; margin: 0; font-size: 15px;">Электромагнитные и гравитационные поля материальны и дискретны. Внутри зарядовых оболочек лептонов циркулируют элементарные переносчики потенциала: позитронные кванты (ɣ⁺) и электронные кванты (ɣ⁻), упорядоченное гидравлическое движение которых и формирует <strong>электрический ток</strong>. Взаимодействие масс обеспечивается гравитационными квантами (ɣ⁰).</p>
-            </div>
+ <h2>Составные частицы материи и взаимодействия</h2>
+ <ul>
+ <li><strong>Положительный мюон</strong> — образует магнитный заряд полюсом (юг), когда гравитационный заряд (μ⁰) находится внутри объёма позитрона (e⁺).</li>
+ <li><strong>Отрицательный мюон</strong> — образует магнитный заряд полюсом (север), когда гравитационный заряд (μ⁰) находится внутри объёма электрона (e⁻).</li>
+ <li><strong>Магнитное взаимодействие</strong> — прямое взаимодействие мюонов при помощи магнитных диполей.</li>
+ <li><strong>Гамма-частица, тёмная энергия</strong> — состоит из плотно прижатых зарядов позитрона (e⁺) и электрона (e⁻) с полным сохранением массы.</li>
+ </ul>
 
-            <div>
-                <h4 style="color: #000000; font-weight: bold; margin-top: 0; margin-bottom: 6px; font-size: 16px;">🧲 4. Составная природа Мюонов и Магнетизма</h4>
-                <p style="color: #111111; line-height: 1.6; margin: 0; font-size: 15px;">Магнитное поле рождается механически, когда один заряд вкладывается в объем другого:
-                <br>• <strong>Положительный мюон (μ⁺) [ЮГ]:</strong> Возникает, когда гравитационная масса (μ⁰) оказывается заперта внутри электрической сферы позитрона (e⁺).
-                <br>• <strong>Отрицательный мюон (μ⁻) [СЕВЕР]:</strong> Возникает, когда масса (μ⁰) заперта внутри электрического заряда электрона (e⁻).
-                <br>Силовые линии эфира — это выстроившиеся цепочки магнитных квантовых диполей <strong>(γ⁰γ⁺)</strong> и <strong>(γ⁰γ⁻)</strong>.</p>
-            </div>
+ <h2>Нуклоны — протон и нейтрон</h2>
+ <p><strong>Протон</strong> — это жёсткий кубический каркас. Его пространственная стабильность обеспечивается центральным позитроном, 8 нейтральными мюонами (μ⁰), образующими вершины куба, и внутренним керном из 94 гамма-частиц. Они жёстко определяют валентность всех химических элементов в таблице Менделеева (восемь главных столбцов).</p>
+ <p><strong>Нейтрон</strong> — это протон, удерживаемый внутри электрона. Нейтрон имеет восемь магнитных полюсов «север».</p>
 
-            <div>
-                <h4 style="color: #000000; font-weight: bold; margin-top: 0; margin-bottom: 6px; font-size: 16px;">🧊 5. Жесткий сопромат Протона и Нейтрона</h4>
-                <p style="color: #111111; line-height: 1.6; margin: 0; font-size: 15px;">Нуклоны обладают детерминированной трехмерной геометрией. <strong>Протон</strong> представляет собой жесткий куб из 8 нейтральных мюонов (μ⁰) в вершинах, с центральным позитроном (e⁺) и упругим керном из 94 гамма-частиц. <strong>Нейтрон</strong> — это динамическая система «протон, запертый внутри расширившегося электрона». Кубическая симметрия остова протона навязывает макромиру строго 8 магнитных полюсов и определяет валентность химических элементов (8 групп таблицы Менделеева).</p>
-            </div>
+ <h2>Виртуальные фотоны как аккумуляторы энергии</h2>
+ <p>Внутри нейтрона происходит пространственное наложение позитронного, электронного и гравитационного зарядов с формированием связанного виртуального фотона с энергией 0,782 МэВ. Внутри протона происходит наложение позитронного заряда на восемь гравитационных зарядов мюонов с образованием виртуальных фотонов с общей энергией 0,514 МэВ.</p>
 
-            <div>
-                <h4 style="color: #000000; font-weight: bold; margin-top: 0; margin-bottom: 6px; font-size: 16px;">🔒 6. Физическая природа Магнитного замка</h4>
-                <p style="color: #111111; line-height: 1.6; margin: 0; font-size: 15px;">Благодаря острой фокусировке сил мюонными линзами (μ⁰), векторное магнитное притяжение на сверхмалых расстояниях становится в точности равным кулоновскому отталкиванию одноименных зарядов. Точка этого упругого баланса и является истинным нерелятивистским механизмом «сильного взаимодействия», удерживающим ядра без привлечения глюонов.</p>
-            </div>
+ <h2>Мюоны в нуклонах как гравитационные линзы</h2>
+ <p>Нейтральный мюон (μ⁰), обладая массой и гравитационным зарядом, работает как физическая линза. Фокусировка поля мюонными линзами создаёт локальный направленный «выброс» напряжённости, формируя экстремальное отклонение от классической кулоновской кривой.</p>
 
-        </div>
+ <h2>Точка баланса: Магнитный замок</h2>
+ <p>Благодаря прецизионной фокусировке поля мюонными линзами, векторное магнитное притяжение на субъядерных дистанциях становится в точности равным кулоновскому отталкиванию зарядов. Это и есть истинный физический механизм «сильного взаимодействия».</p>
 
-    </div>
+ <h2>Атом = Ядро</h2>
+ <p>Атомное ядро в ПЭММ — это монолитная система, состоящая из нуклонов и мюонов, взаимодействующих между собой через совокупность геометрически сбалансированных сил. Внешний статический заряд атома равен нулю — все «валентные» электроны в процессе сборки структуры упали непосредственно на ядро.</p>
+
+ <h2>Рождение «строительного материала» звёзд и планет</h2>
+ <p>Чёрная дыра накопляет массу из нейтральных мюонов,гамма-частиц и квантовой материи, что в итоге приводит взрывному образованию нейтронов и к кулоновскому взрыву (вспышка сверхновой). Практически вся выброшенная масса — это чистые нейтральные мюоны (тёмная материя) и свободные гамма-частицы (тёмная энергия). Именно этот материал формирует новые звёздные системы.</p>
+
+ <div class="footer-text">
+ <p><strong>Лицензия:</strong> CC BY 4.0 | ORCID: 0009-0005-4567-9701</p>
+ <p>Официальный корневой портал ПЭММ на GitHub Pages. Код верифицирован Яндекс.Вебмастером.</p>
+ </div>
+ </div>
+
+ <!-- ПРАВАЯ КОЛОНКА (ИНСТРУМЕНТЫ ПЭММ) -->
+ <div class="sidebar">
+ 
+ <!-- 3D Модель -->
+ <div style="background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 12px; color: #fff; margin-bottom: 15px;">
+ <div style="text-align: center; color: #4dadff; font-size: 14px; font-weight: bold; margin-bottom: 5px;">Строение протона в ПЭММ</div>
+ <div style="position: relative; width: 100%; height: 260px; background: #0b0d11; border-radius: 6px; overflow: hidden;">
+ <canvas id="pemmCanvas" style="display: block; width:100%; height:100%; cursor: move;"></canvas>
+ <div id="pemmInfo" style="position: absolute; bottom: 5px; left: 5px; right: 5px; background: rgba(22,27,34,0.95); padding: 5px; border-radius: 4px; font-size: 10px; text-align: center; color: #a0aec0; pointer-events: none;">Вращайте куб мышкой</div>
+ </div>
+ </div>
+
+ <!-- Анализатор масс -->
+ <div style="background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 12px; color: #fff;">
+ <div style="text-align: center; color: #4dadff; font-size: 14px; font-weight: bold; margin-bottom: 8px;">Анализатор масс ПЭММ</div>
+ <div style="margin-bottom: 8px;">
+  <label style="display: block; font-size: 11px; color: #a0aec0; margin-bottom: 3px;">Истинная масса адрона (в а.е.м.):</label>
+  <input type="text" id="inputAem" value="1.00727647" style="width: 100%; padding: 5px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; font-size: 12px; font-weight: bold; box-sizing: border-box;">
+  <div style="font-size: 10px; color: #718096; margin-top: 2px; text-align: right;">Поля деформации: <span id="valMev" style="color: #4dadff;">...</span> МэВ</div>
+ </div>
+ <div style="margin-bottom: 8px; display: flex; gap: 6px;">
+  <select id="selPlus" style="flex: 1; padding: 4px; background: #0b0d11; color: #fff; font-size: 11px; border-radius: 4px; border: 1px solid #30363d;"><option value="1">Поз. (+)</option><option value="0">0</option></select>
+  <select id="selMinus" style="flex: 1; padding: 4px; background: #0b0d11; color: #fff; font-size: 11px; border-radius: 4px; border: 1px solid #30363d;"><option value="0">0</option><option value="1">Эл. (-)</option></select>
+ </div>
+ <div style="background: #0b0d11; border: 1px solid #2c3440; padding: 6px; border-radius: 4px; margin-bottom: 8px; font-size: 11.5px; line-height: 1.4;">
+  <div style="display: flex; justify-content: space-between; margin-bottom: 3px;"><span>Лептоны (n₃):</span><span id="resN3" style="font-weight: bold;">0</span></div>
+  <div style="display: flex; justify-content: space-between; margin-bottom: 3px;"><span>Мюоны (n₁):</span><span id="resN1" style="color:#ffb703; font-weight: bold;">0</span></div>
+  <div style="display: flex; justify-content: space-between;"><span>Гамма (n₂):</span><span id="resN2" style="color:#ffb703; font-weight: bold;">0</span></div>
+ </div>
+ <div style="background: rgba(255, 234, 0, 0.08); border: 1px solid rgba(255, 234, 0, 0.3); padding: 8px; border-radius: 4px; text-align: center; font-size: 13px; font-weight: bold; color: #ffea00;">
+  Виртуальный фотон: <span id="resPhotMev">...</span> МэВ
+
+  <div style="font-size: 9.5px; color: #a0aec0; font-weight: normal; margin-top: 1px;">(<span id="resPhotAem">...</span> а.е.м.)</div>
+ </div>
+ </div>
+
+ </div>
+
 
     <!-- ПОДКЛЮЧАЕМ ВНЕШНИЙ ЧИСТЫЙ СКРИПТ ЛОГИКИ В САМОМ КОНЦЕ СТРУКТУРЫ BODY -->
     <script src="script.js"></script>
