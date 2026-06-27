@@ -488,10 +488,130 @@
  }
  drawN();
 })();
-</script>        
+</script>  
+<div class="pemm-calc" style="max-width: 600px; margin: 5px auto; font-family: 'Roboto', sans-serif; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5); pointer-events: auto !important;">
+  <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 15px; margin-bottom: 12px;">Материальный анализатор масс ПЭММ</h3>
+  
+  <!-- ИСПРАВЛЕН ТЕКСТ НА РУССКИЙ -->
+  <div style="margin-bottom: 10px; pointer-events: auto !important;">
+    <label style="display: block; font-size: 11px; color: #a0aec0; margin-bottom: 4px;">Истинная масса адрона (в а.е.м.):</label>
+    <input type="text" id="inputMassAem" value="0.53061214" style="width: 100%; padding: 5px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; box-sizing: border-box; font-size: 13px; font-weight: bold; pointer-events: auto !important; position: relative; z-index: 99999;" />
+    <div style="font-size: 10px; color: #718096; margin-top: 3px; text-align: right;">
+      Эквивалент деформации полей: <span id="valMev" style="color: #4dadff;">...</span> МэВ
+    </div>
+  </div>
+
+  <div style="margin-bottom: 12px; display: flex; gap: 10px; pointer-events: auto !important;">
+    <div style="flex: 1;">
+      <label style="display: block; font-size: 10px; color: #a0aec0; margin-bottom: 3px;">Позитроны (+):</label>
+      <select id="selectPlus" style="width: 100%; padding: 4px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; font-size: 12px; pointer-events: auto !important; position: relative; z-index: 99999;">
+        <option value="1" selected />1 (Есть)
+        <option value="0" />0 (Нет)
+      </select>
+    </div>
+    <div style="flex: 1;">
+      <label style="display: block; font-size: 10px; color: #a0aec0; margin-bottom: 3px;">Электроны (-):</label>
+      <select id="selectMinus" style="width: 100%; padding: 4px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; font-size: 12px; pointer-events: auto !important; position: relative; z-index: 99999;">
+        <option value="0" selected />0 (Нет)
+        <option value="1" />1 (Есть)
+      </select>
+    </div>
+  </div>
+
+  <!-- СОСТАВ -->
+  <div style="background: #0b0d11; border: 1px solid #2c3440; padding: 10px; border-radius: 6px; margin-bottom: 12px;">
+    <div style="color: #58a6ff; font-size: 11px; font-weight: bold; margin-bottom: 6px; text-align: center; border-bottom: 1px solid #222; padding-bottom: 4px;">Дискретный субатомный состав:</div>
+    
+    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px;">
+      <span>Лептоны заряда (<b>n₃</b>, e<sup>&plusmn;</sup>):</span>
+      <span id="resN3" style="color: #fff; font-weight: bold;">0</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px;">
+      <span>Нейтральные мюоны (<b>n₁</b>, &mu;⁰):</span>
+      <span id="resN1" style="color: #ffb703; font-weight: bold;">0</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px;">
+      <span>Гамма-частицы (<b>n₂</b>, &yen;):</span>
+      <span id="resN2" style="color: #ffb703; font-weight: bold;">0</span>
+    </div>
+  </div>
+
+  <!-- ВЫЧИСЛЕННАЯ ЭНЕРГИЯ ВИРТУАЛЬНОГО ФОТОНА -->
+  <div style="background: rgba(255, 234, 0, 0.08); border: 1px solid rgba(255, 234, 0, 0.3); padding: 8px; border-radius: 4px; text-align: center; font-size: 13.5px; font-weight: bold; color: #ffea00; margin-bottom: 12px;">
+    Виртуальный фотон: <span id="resPhotonMev">...</span> МэВ
+    <div style="font-size: 10px; color: #a0aec0; font-weight: normal; margin-top: 2px;">
+      (Материальный остаток полей: <span id="resPhotonAem">...</span> а.е.м.)
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid #30363d; padding-top: 8px; font-size: 10.5px; color: #a0aec0; line-height: 1.4;">
+    <span style="color: #4dadff; font-weight: bold;">Прецизионные константы ПЭММ (а.е.м.):</span><br />
+    • m<sub>e</sub> = 0.0005458310 | • m<sub>&mu;</sub> = 0.1128803326 | • m<sub>&gamma;</sub> = 0.0010971602
+  </div>
+</div>
+
+<script>
+(function() {
+  // Заложены прецизионные константы до последнего знака
+  const m_e_aem   = 0.0005458310; 
+  const m_mu_aem  = 0.1128803326; 
+  const m_yen_aem = 0.0010971602; 
+  const aem_to_mev = 931.49432;
+
+  const inputAem = document.getElementById('inputMassAem');
+  const txtMev = document.getElementById('valMev');
+  const selPlus = document.getElementById('selectPlus');
+  const selMinus = document.getElementById('selectMinus');
+  
+  const outN1 = document.getElementById('resN1');
+  const outN2 = document.getElementById('resN2');
+  const outN3 = document.getElementById('resN3');
+  const outPhotMev = document.getElementById('resPhotonMev');
+  const outPhotAem = document.getElementById('resPhotonAem');
+
+  function analyze() {
+    let cleanInput = inputAem.value.replace(/,/g, '.').replace(/\s/g, '');
+    let mass_aem = parseFloat(cleanInput) || 0;
+    
+    let mass_mev = mass_aem * aem_to_mev;
+    txtMev.innerText = mass_mev.toFixed(5);
+
+    let n3 = (parseInt(selPlus.value) || 0) + (parseInt(selMinus.value) || 0);
+    let mass_minus_letons = mass_aem - (m_e_aem * n3);
+
+    // Добавлена микроскопическая поправка на погрешность округления чисел с плавающей точкой в JS
+    let n1 = Math.floor((mass_minus_letons + 1e-9) / m_mu_aem);
+    if (n1 < 0) n1 = 0;
+
+    let remainder_after_mu = mass_minus_letons - (n1 * m_mu_aem);
+    let n2 = Math.floor((remainder_after_mu + 1e-9) / m_yen_aem);
+    if (n2 < 0) n2 = 0;
+
+    let photon_aem = remainder_after_mu - (n2 * m_yen_aem);
+    let photon_mev = photon_aem * aem_to_mev;
+
+    outN3.innerText = n3;
+    outN1.innerText = n1;
+    outN2.innerText = n2;
+    
+    outPhotMev.innerText = photon_mev.toFixed(8);
+    outPhotAem.innerText = photon_aem.toFixed(10);
+  }
+
+  [inputAem, selPlus, selMinus].forEach(el => {
+    el.addEventListener('input', analyze);
+    el.addEventListener('change', analyze);
+  });
+  analyze();
+})();
+</script>
+     
 </td></tr></table>
 </td>
 
+        
+
+        
         
         <!-- ЦЕНТРАЛЬНАЯ ЧАСТЬ: СТАТЬИ И ТЕКСТ -->
         <main class="main-content">
