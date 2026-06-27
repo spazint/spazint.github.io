@@ -272,7 +272,222 @@
   draw();
 })();
 </script>
-        
+
+<div class="pemm-container" style="max-width: 600px; margin: 20px auto; font-family: 'Roboto', sans-serif; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+ <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 18px;">Строение нейтрона в ПЭММ</h3>
+ <p style="font-size: 13px; color: #a0aec0; text-align: center; margin-bottom: 10px;">Вращайте куб мышкой. Наведите на мюоны для анализа магнитных полюсов СЕВЕР.</p>
+ 
+ <div style="position: relative; width: 100%; height: 350px; background: #0b0d11; border-radius: 6px; overflow: hidden;">
+ <canvas id="pemmCanvasNeutron" width="500" height="350" style="display: block; width: 100%; height: 100%; cursor: move;"></canvas>
+ <div id="pemmInfoNeutron" style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(22,27,34,0.9); padding: 8px 12px; border-radius: 4px; border: 1px solid #30363d; font-size: 13px; line-height: 1.4; pointer-events: none;">
+ <span style="color: #58a6ff; font-weight: bold;">Метрика нейтрона:</span> Куб мюонов (синие), Керн (35% заряда позитрона), Внешний электрон (100% заряда снаружи).
+ </div>
+ </div>
+</div>
+<script>
+(function() {
+ const canvasN = document.getElementById('pemmCanvasNeutron');
+ const ctxN = canvasN.getContext('2d');
+ const infoElN = document.getElementById('pemmInfoNeutron');
+ function resizeN() {
+ const r = canvasN.getBoundingClientRect();
+ canvasN.width = r.width;
+ canvasN.height = r.height;
+ }
+ window.addEventListener('resize', resizeN);
+ resizeN();
+
+ const verticesN = [
+ {x: -1, y: -1, z: -1, id: '1', col: '#1a73e8'}, {x: 1, y: -1, z: -1, id: '6', col: '#0055ff'},
+ {x: 1, y: 1, z: -1, id: '4', col: '#0022aa'}, {x: -1, y: 1, z: -1, id: '2', col: '#4dadff'},
+ {x: -1, y: -1, z: 1, id: '8', col: '#0033cc'}, {x: 1, y: -1, z: 1, id: '7', col: '#1e3d59'},
+ {x: 1, y: 1, z: 1, id: '5', col: '#1a73e8'}, {x: -1, y: 1, z: 1, id: '3', col: '#45f3ff'}
+ ];
+ 
+ // ТРЮК: Создаем ребра через строку, чтобы Blogger не вырезал массив
+ const edgesStr = "0,1,1,2,2,3,3,0,4,5,5,6,6,7,7,4,0,4,1,5,2,6,3,7";
+ const edgesN = edgesStr.split(",").map(Number);
+ 
+ let angleXN = 0.4;
+ let angleYN = 0.6;
+ 
+ const fm_scaleN = 140;
+ let r_positronN = 0.833 * fm_scaleN; 
+ let r_kernN = 0.25 * fm_scaleN; 
+ let r_muonN = 0.25 * fm_scaleN; 
+ let dist_muon_centerN = (2/3) * r_positronN; 
+ 
+ let scaleN = dist_muon_centerN / Math.sqrt(3);
+ let isDraggingN = false;
+ let previousMousePositionN = { x: 0, y: 0 };
+ let hoveredVertexN = -1;
+
+ canvasN.addEventListener('mousedown', e => { isDraggingN = true; previousMousePositionN = { x: e.clientX, y: e.clientY }; });
+ window.addEventListener('mouseup', () => isDraggingN = false);
+ 
+ canvasN.addEventListener('mousemove', e => {
+ const rect = canvasN.getBoundingClientRect();
+ const mouseX = e.clientX - rect.left;
+ const mouseY = e.clientY - rect.top;
+ if (isDraggingN) {
+ const deltaX = e.clientX - previousMousePositionN.x;
+ const deltaY = e.clientY - previousMousePositionN.y;
+ angleYN += deltaX * 0.01;
+ angleXN += deltaY * 0.01;
+ previousMousePositionN = { x: e.clientX, y: e.clientY };
+ } else {
+ hoveredVertexN = -1;
+ const cx = canvasN.width / 2;
+ const cy = canvasN.height / 2;
+ 
+ for (let i = 0; i < verticesN.length; i++) {
+ const p = projectN(verticesN[i], angleXN, angleYN, cx, cy);
+ const dx = mouseX - p.x;
+ const dy = mouseY - p.y;
+ if (dx*dx + dy*dy < (r_muonN * r_muonN)) { 
+ hoveredVertexN = i;
+ break;
+ }
+ }
+ }
+ updateInfoTextN();
+ });
+
+ function projectN(vertex, angleX, angleY, cx, cy) {
+ let x1 = vertex.x * Math.cos(angleY) - vertex.z * Math.sin(angleY);
+ let z1 = vertex.x * Math.sin(angleY) + vertex.z * Math.cos(angleY);
+ let y2 = vertex.y * Math.cos(angleX) - z1 * Math.sin(angleX);
+ let z2 = vertex.y * Math.sin(angleX) + z1 * Math.cos(angleX);
+ return { x: cx + x1 * scaleN, y: cy + y2 * scaleN, z: z2, id: vertex.id, col: vertex.col };
+ }
+
+ function updateInfoTextN() {
+ if (hoveredVertexN !== -1) {
+ infoElN.innerHTML = `<span style="color:#45f3ff; font-weight:bold;">Магнитный вектор №${verticesN[hoveredVertexN].id} (СЕВЕР):</span> Пространственные полярные углы полей:<br>` +
+ `• К соседнему синему мюону куба: <b style="color:#4dadff">70.53°</b><br>` +
+ `• По диагонали грани мюонного каркаса: <b style="color:#4dadff">109.47°</b><br>` +
+ `• Сквозная диагональ ядра на ЮГ: <b style="color:#4dadff">180.00°</b>`;
+ } else {
+ infoElN.innerHTML = `<span style="color: #45f3ff; font-weight: bold;">Параметры Нейтрона:</span> Позитрон удерживает керн (35% заряда), внешний электрон вынесен на увеличенный радиус за счет площади керна.`;
+ }
+ }
+
+ function drawKernN(ctx, cx, cy, r) {
+ ctx.save();
+ ctx.beginPath();
+ ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+ ctx.clip();
+ let size = 4; 
+ for (let i = cx - r; i < cx + r; i += size) {
+ for (let j = cy - r; j < cy + r; j += size) {
+ let xi = Math.floor((i - cx) / size);
+ let yi = Math.floor((j - cy) / size);
+ if ((xi + yi) % 2 === 0) {
+ ctx.fillStyle = '#ff2a2a';
+ } else {
+ ctx.fillStyle = '#1a73e8';
+ }
+ ctx.fillRect(i, j, size, size);
+ }
+ }
+ ctx.restore();
+ ctx.beginPath();
+ ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+ ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+ ctx.lineWidth = 1;
+ ctx.stroke();
+ }
+
+ function drawN() {
+ ctxN.clearRect(0, 0, canvasN.width, canvasN.height);
+ const cx = canvasN.width / 2;
+ const cy = canvasN.height / 2;
+ const projected = verticesN.map(v => projectN(v, angleXN, angleYN, cx, cy));
+ let renderElements = [];
+ projected.forEach((p, idx) => {
+ renderElements.push({ type: 'muon', z: p.z, data: p, idx: idx });
+ });
+ renderElements.push({ type: 'kern', z: 0 });
+ renderElements.sort((a, b) => b.z - a.z);
+
+ ctxN.beginPath();
+ ctxN.arc(cx, cy, r_positronN, 0, 2 * Math.PI); 
+ let gradient = ctxN.createRadialGradient(cx, cy, r_kernN, cx, cy, r_positronN);
+ gradient.addColorStop(0, 'rgba(69, 243, 255, 0.12)');
+ gradient.addColorStop(0.8, 'rgba(26, 115, 232, 0.25)');
+ gradient.addColorStop(1, 'rgba(0, 85, 255, 0.03)');
+ ctxN.fillStyle = gradient;
+ ctxN.fill();
+
+ ctxN.beginPath();
+ ctxN.arc(cx, cy, r_positronN + 30, 0, 2 * Math.PI);
+ ctxN.strokeStyle = 'rgba(0, 85, 255, 0.4)';
+ ctxN.lineWidth = 2;
+ ctxN.stroke();
+
+ ctxN.lineWidth = 1;
+ for (let i = 0; i < edgesN.length; i += 2) {
+ const start = projected[edgesN[i]];
+ const end = projected[edgesN[i+1]];
+ if (start && end) {
+ ctxN.beginPath();
+ ctxN.moveTo(start.x, start.y);
+ ctxN.lineTo(end.x, end.y);
+ ctxN.strokeStyle = (hoveredVertexN === edgesN[i] || hoveredVertexN === edgesN[i+1]) ? '#ffea00' : 'rgba(69, 243, 255, 0.25)';
+ ctxN.stroke();
+ }
+ }
+
+ renderElements.forEach(item => {
+ if (item.type === 'kern') {
+ drawKernN(ctxN, cx, cy, r_kernN);
+ ctxN.beginPath();
+ ctxN.arc(cx, cy, 5, 0, 2 * Math.PI);
+ ctxN.fillStyle = '#ffea00'; 
+ ctxN.fill();
+ ctxN.strokeStyle = '#fff';
+ ctxN.lineWidth = 0.5;
+ ctxN.stroke();
+ } 
+ else if (item.type === 'muon') {
+ let p = item.data;
+ ctxN.beginPath();
+ ctxN.moveTo(p.x, p.y);
+ let targetX = cx + (p.x - cx) * 2.8; 
+ let targetY = cy + (p.y - cy) * 2.8;
+ ctxN.lineTo(targetX, targetY);
+ 
+ ctxN.strokeStyle = item.idx === hoveredVertexN ? '#ffea00' : p.col;
+ ctxN.lineWidth = item.idx === hoveredVertexN ? 3.5 : 1.5;
+ ctxN.stroke();
+
+ ctxN.beginPath();
+ ctxN.arc(p.x, p.y, 45, 0, 2 * Math.PI);
+ let mGradient = ctxN.createRadialGradient(p.x - r_muonN*0.2, p.y - r_muonN*0.2, r_muonN*0.1, p.x, p.y, r_muonN);
+ mGradient.addColorStop(0, '#66fcf1'); 
+ mGradient.addColorStop(0.8, '#1e3d59');
+ mGradient.addColorStop(1, '#0f172a');
+ 
+ ctxN.fillStyle = item.idx === hoveredVertexN ? '#ffea00' : mGradient;
+ ctxN.fill();
+ ctxN.strokeStyle = 'rgba(255,255,255,0.3)';
+ ctxN.stroke();
+
+ ctxN.fillStyle = '#ffffff';
+ ctxN.font = 'bold 10px sans-serif';
+ ctxN.textAlign = 'center';
+ ctxN.fillText(p.id, p.x, p.y + 3.5);
+ }
+ });
+
+ if (!isDraggingN) {
+ angleYN += 0.002;
+ }
+ requestAnimationFrame(drawN);
+ }
+ drawN();
+})();
+</script>        
         
         <!-- ЦЕНТРАЛЬНАЯ ЧАСТЬ: СТАТЬИ И ТЕКСТ -->
         <main class="main-content">
