@@ -20,7 +20,18 @@
         /* ЦЕНТРАЛЬНАЯ КОЛОНКА (Для основного научного текста) */
         .main-content { flex: 1; background-color: #fff; padding: 25px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
         
-       
+        /* ПРАВЫЙ ГАДЖЕТ (Для навигации по сети сайтов) */
+        .sidebar-right { width: 300px; flex-shrink: 0; background-color: #fff; padding: 15px; border-radius: 6px; border: 1px dashed #777; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-size: 12px; }
+        
+        h1 { color: #3182ce; font-size: 18px; border-bottom: 2px solid #edf2f7; padding-bottom: 5px; margin: 0 0 15px 0; }
+        h2 { color: #4a5568; font-size: 15px; margin: 15px 0 10px 0; border-left: 4px solid #3182ce; padding-left: 8px; }
+        p { margin-bottom: 10px; font-size: 14px; } ul { padding-left: 15px; margin-bottom: 10px; } li { margin-bottom: 4px; }
+        .formula { font-family: 'Courier New', monospace; font-weight: bold; color: #c53030; background-color: #fff5f5; padding: 1px 3px; }
+        .right-title { font-weight: bold; background-color: #3182ce; color: #fff; padding: 4px; text-align: center; margin-bottom: 10px; font-family: monospace; }
+    </style>
+</head>
+<body>
+
     <!-- ВЕРХНЯЯ ШАПКА САЙТА -->
     <div class="header">
         <div class="title">Вселенная ПЭММ</div>
@@ -477,10 +488,9 @@
  }
  drawN();
 })();
-</td>
 </script>        
 </td></tr></table>
-
+</td>
      
         <!-- ЦЕНТРАЛЬНАЯ ЧАСТЬ: СТАТЬИ И ТЕКСТ -->
         <main class="main-content">
@@ -568,4 +578,3 @@
     </div>
 </body>
 </html>
-
