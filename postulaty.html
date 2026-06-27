@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8 Фундаментальных постулатов квантовой материи в ПЭММ</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Позитронно-Электронно-Мюоная Модель (ПЭММ)</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.5; color: #4a5568; margin: 0; padding: 0; background-color: #f7fafc; width: 100%; }
         .header { background-color: #3182ce; color: #fff; padding: 15px 30px; border-bottom: 3px solid #63b3ed; }
@@ -11,90 +10,39 @@
         .meta { font-size: 12px; color: #ebf8ff; } .meta a { color: #fff; text-decoration: underline; }
         .nav { background-color: #4a5568; padding: 8px 30px; display: flex; gap: 15px; border-bottom: 1px solid #2d3748; }
         .nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 13px; } .nav a:hover { color: #90cdf4; }
-        .layout-table { width: 100%; border-collapse: separate; border-spacing: 20px; table-layout: fixed; }
-        .td-left { width: 300px; vertical-align: top; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .td-main { vertical-align: top; background-color: #fff; padding: 25px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .td-right { width: 300px; vertical-align: top; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.4; color: #111; background-color: #fcfcfc; padding: 15px; border: 1px dashed #777; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        /* ТРЁХКОЛОНОЧНЫЙ КАРКАС НА ВЕСЬ ЭКРАН */
+        .layout-container { display: flex; padding: 20px 30px; gap: 20px; box-sizing: border-box; width: 100%; min-height: 80vh; }
+        
+        /* ЛЕВЫЙ ГАДЖЕТ (Для 3D моделей атомов) */
+        .sidebar-left { width: 220px; flex-shrink: 0; background-color: #111; color: #fff; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 13px; }
+        
+        /* ЦЕНТРАЛЬНАЯ КОЛОНКА (Для основного научного текста) */
+        .main-content { flex: 1; background-color: #fff; padding: 25px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        /* ПРАВЫЙ ГАДЖЕТ (Для навигации по сети сайтов) */
+        .sidebar-right { width: 240px; flex-shrink: 0; background-color: #fff; padding: 15px; border-radius: 6px; border: 1px dashed #777; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-size: 12px; }
+        
         h1 { color: #3182ce; font-size: 18px; border-bottom: 2px solid #edf2f7; padding-bottom: 5px; margin: 0 0 15px 0; }
-        h2 { color: #4a5568; font-size: 15px; margin: 20px 0 10px 0; border-left: 4px solid #3182ce; padding-left: 8px; text-transform: uppercase; }
-        p { margin-bottom: 10px; font-size: 14px; text-align: left; } ul, ol { padding-left: 20px; margin-bottom: 15px; } li { margin-bottom: 5px; font-size: 13px; text-align: left; }
+        h2 { color: #4a5568; font-size: 15px; margin: 15px 0 10px 0; border-left: 4px solid #3182ce; padding-left: 8px; }
+        p { margin-bottom: 10px; font-size: 14px; } ul { padding-left: 15px; margin-bottom: 10px; } li { margin-bottom: 4px; }
         .formula { font-family: 'Courier New', monospace; font-weight: bold; color: #c53030; background-color: #fff5f5; padding: 1px 3px; }
-        .box { background-color: #ebf8ff; border-left: 4px solid #63b3ed; padding: 10px; margin: 15px 0; border-radius: 0 3px 3px 0; font-size: 13px; text-align: left; }
-        .right-title { font-weight: bold; background-color: #005588; color: #fff; padding: 4px; text-align: center; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .right-title { font-weight: bold; background-color: #3182ce; color: #fff; padding: 4px; text-align: center; margin-bottom: 10px; font-family: monospace; }
     </style>
 </head>
 <body>
 
+    <!-- ВЕРХНЯЯ ШАПКА САЙТА -->
     <div class="header">
         <div class="title">Вселенная ПЭММ</div>
         <div class="meta">Владимир Балтрунас, инженер-физик (МИФИ) | ORCID: <a href="https://orcid.org" target="_blank">0009-0005-4567-9701</a> | ИСТИНА: 804488820</div>
     </div>
 
+    <!-- ГОРИЗОНТАЛЬНОЕ МЕНЮ СТРАНИЦ -->
     <div class="nav"><a href="index.html">Главная</a><a href="vodorod.htm">Парадокс Водорода</a><a href="postulaty.html">8 Постулатов</a></div>
 
-    <table class="layout-table">
-        <tr>
-            <!-- ЛЕВЫЙ ГАДЖЕТ: СВОБОДНЫЙ ИНФО-БЛОК ДЛЯ АЗОТА (БЕЗ СКРИПТОВ КАНВАСА) -->
-            <td class="td-left">
-                <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 16px;">Структура Атома Азота</h3>
-                <p style="font-size: 12px; color: #a0aec0; text-align: left; margin-bottom: 10px;">Метрика азота в ПЭММ подчиняется законам жесткого кубического сопряжения полей.</p>
-                <p style="font-size: 12px; color: #cbd5e0; text-align: left;">Атом азота имеет 3 полюса «север» и 5 полюсов «юг», что определяет его валентные свойства и межатомные углы связи.</p>
-            </td>
-        
-        /* Центральная колонка для вашей статьи */
-        .td-main { 
-            vertical-align: top; 
-            background-color: #fff; 
-            padding: 25px; 
-            border-radius: 6px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-        }
-        
-        /* Правый гаджет: зафиксирован на 300px и прижат к самому верху */
-        .td-right { 
-            width: 300px; 
-            vertical-align: top; 
-            font-family: 'Courier New', Courier, monospace; 
-            font-size: 13px; 
-            line-height: 1.4; 
-            color: #111; 
-            background-color: #fcfcfc; 
-            padding: 15px; 
-            border: 1px dashed #777; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-        }
-        
-        /* Стили текста, списков и формул внутри статьи */
-        h1 { color: #3182ce; font-size: 18px; border-bottom: 2px solid #edf2f7; padding-bottom: 5px; margin: 0 0 15px 0; }
-        h2 { color: #4a5568; font-size: 15px; margin: 20px 0 10px 0; border-left: 4px solid #3182ce; padding-left: 8px; text-transform: uppercase; }
-        p { margin-bottom: 10px; font-size: 14px; text-align: left; } 
-        ul, ol { padding-left: 20px; margin-bottom: 15px; } 
-        li { margin-bottom: 5px; font-size: 13px; text-align: left; }
-        .formula { font-family: 'Courier New', monospace; font-weight: bold; color: #c53030; background-color: #fff5f5; padding: 1px 3px; }
-        .box { background-color: #ebf8ff; border-left: 4px solid #63b3ed; padding: 10px; margin: 15px 0; border-radius: 0 3px 3px 0; font-size: 13px; text-align: left; }
-        .right-title { font-weight: bold; background-color: #005588; color: #fff; padding: 4px; text-align: center; margin-bottom: 12px; letter-spacing: 0.5px; }
-    </style>
-</head>
-<body>
-
-    <!-- ВЕРХНЯЯ СИНЯЯ ШАПКА -->
-    <div class="header">
-        <div class="title">Вселенная ПЭММ</div>
-        <div class="meta">Владимир Балтрунас, инженер-физик (МИФИ) | ORCID: <a href="https://orcid.org" target="_blank">0009-0005-4567-9701</a> | ИСТИНА: 804488820</div>
-    </div>
-
-    <!-- ГОРИЗОНТАЛЬНОЕ МЕНЮ -->
-    <div class="nav">
-        <a href="index.html">Главная</a>
-        <a href="vodorod.htm">Парадокс Водорода</a>
-        <a href="postulaty.html">8 Постулатов</a>
-    </div>
-
-    <!-- НАЧАЛО ТАБЛИЧНОЙ СЕТКИ САЙТА -->
-    <table class="layout-table">
-        <tr>
-            <td class="td-left">
+    <!-- ТРЕХКОЛОНОЧНЫЙ БЛОК -->
+    <div class="layout-container">
 
         <!-- ЛЕВЫЙ ГАДЖЕТ: 3D МОДЕЛИ -->
        <div class="pemm-container" style="max-width: 300px; margin: 20px auto; font-family: 'Roboto', sans-serif; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
@@ -427,5 +375,7 @@
 </div>
 
     </div>
+</body>
+</html>
 </body>
 </html>
