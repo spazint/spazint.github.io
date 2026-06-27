@@ -646,56 +646,119 @@
         
         <!-- ЦЕНТРАЛЬНАЯ ЧАСТЬ: СТАТЬИ И ТЕКСТ -->
         <main class="main-content">
-           <h1>Позитронно-Электронно-Мюонная Модель (ПЭММ): Фундаментальный Чертеж Вселенной</h1>
-<p>Позитронно-Электронно-Мюонная Модель (ПЭММ) — это физическая модель, описывающая материальное устройство микро- и макромира. Модель полностью отвергает существование дробных кварков, нематериальных «глюонных полей» и концепцию «Большого взрыва». Вселенная материальна на всех уровнях: пустоты или «чистой энергии» без физического материального носителя не существует.</p>
+ <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 15px;">Строение протона в ПЭММ</h3>
+<div style="position: relative; width: 100%; height: 260px; background: #0b0d11; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+    <canvas id="pemmCanvas" style="display: block; width: 100%; height: 100%; cursor: move;"></canvas>
+    <div id="pemmInfo" style="position: absolute; bottom: 5px; left: 5px; right: 5px; background: rgba(22,27,34,0.9); padding: 6px; border-radius: 4px; border: 1px solid #30363d; font-size: 11px; line-height: 1.3; pointer-events: none;"></div>
+</div>
 
-<h2>Закон сохранения энергии: Материя не превращается в энергию</h2>
-<p>Концепция «аннигиляции» лептонов в ПЭММ опровергнута. При жестком сжатии позитрона (e+) и электрона (e-) материя не уничтожается. Происходит образование нейтрального электрического диполя — гамма-частицы (¥), с полным сохранением исходного заряда и массы. Выделяющаяся энергия — это упругая энергия связи полей.</p>
+<h3 style="margin-top: 15px; text-align: center; color: #4dadff; font-size: 15px;">Строение нейтрона в ПЭММ</h3>
+<div style="position: relative; width: 100%; height: 260px; background: #0b0d11; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+    <canvas id="neutronCanvas" style="display: block; width: 100%; height: 100%; cursor: move;"></canvas>
+    <div id="neutronInfo" style="position: absolute; bottom: 5px; left: 5px; right: 5px; background: rgba(22,27,34,0.9); padding: 6px; border-radius: 4px; border: 1px solid #30363d; font-size: 11px; line-height: 1.3; pointer-events: none;"></div>
+</div>
 
-<h2>Отказ от гипотезы «Большого взрыва» и динамическая Вселенная</h2>
-<p>В ПЭММ концепция «Большого взрыва» и расширения самого пространства полностью отвергается как математическая фикция. Вселенная бесконечна во времени, стационарна и представляет собой вечный круговорот дискретных материальных частиц.</p>
-<p>Космологическое красное смещение — это не свидетельство «разлета галактик», а естественный физический процесс старения света и потери им энергии при механическом трении о корпускулярную среду вакуума на межгалактических расстояниях. Время вечно, а материя циркулирует через локальные очаги накопления, прессования и сброса.</p>
+<!-- МАТЕРИАЛЬНЫЙ АНАЛИЗАТОР МАСС ПЭММ -->
+<div class="right-title" style="background-color: #005588; color: #fff; padding: 6px; text-align: center; margin-top: 20px; margin-bottom: 12px; font-weight: bold; font-size: 13px; border-radius: 4px;">МАТЕРИАЛЬНЫЙ АНАЛИЗАТОР МАСС</div>
+<div style="font-size: 12px; color: #e2e8f0; padding: 5px 10px; background: #1a202c; border-radius: 4px; margin-bottom: 15px; text-align: left;">
+    <span style="color: #a0aec0;">Истинная масса адрона:</span><br>
+    <b style="color: #70e000; font-family: monospace;">0.53061214 а.е.м.</b>
+</div>
 
-<h2>Модель циклической эволюции материи во Вселенной</h2>
-<p>Вместо единичного акта творения, ПЭММ описывает непрерывный круговорот материи через локальные очаги активности — звезды и черные дыры:</p>
-<ol>
-    <li><strong>Аккреция и накопление:</strong> Черные дыры стягивают на себя окружающую темную материю (нейтральные мюоны), темную энергию (гамма-частицы) и квантовую материю (позитронные, электронные и гравитационные кванты).</li>
-    <li><strong>Критическая точка (Локальный взрыв):</strong> Когда количество накопленной квантовой материи и синтезированных нуклонов достигает предела, дефект положительного заряда в протонах (даже при значении 10⁻¹⁰) создает избыточное кулоновское давление и происходит взрыв черной дыры.</li>
-    <li><strong>Сверхновая:</strong> Кулоновское отталкивание преодолевает гравитацию, и происходит взрыв черной дыры, который разбрасывает новообразованную материю в пространство. Из выброшенного в результате взрыва сверхновой звезды материи образуются галактики и звездные системы.</li>
-    <li><strong>Фаза синтеза:</strong> Внутри этих сверхплотных объектов - звезд идет процесс «выгорания» темной энергии, темной материи и квантовой материи — синтез нейтронов и протонов. Когда топливо кончается, звезды гаснут и галактика становится мусором для очередной черной дыры.</li>
-    <li><strong>Повторение цикла:</strong> Выброшенная материя снова собирается воедино и становится строительным материалом для очередной новой звезды.</li>
-</ol>
+<!-- НАВИГАЦИЯ ВНИЗУ ЛЕВОГО БЛОКА -->
+<div class="right-title" style="background-color: #005588; color: #fff; padding: 6px; text-align: center; margin-top: 20px; margin-bottom: 12px; font-weight: bold; font-size: 13px; border-radius: 4px;">НАВИГАЦИЯ ПО СЕТИ САЙТОВ</div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://github.io" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">Репозиторий github.io</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://google.com" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">sites.google.com/view/spazint</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://blogspot.com" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">spazint.blogspot.com</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://blogspot.com" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">atom-mol.blogspot.com</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://blogspot.com" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">adrons.blogspot.com</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://blogspot.com" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">sun-pemm.blogspot.com</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://ucoz.net" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">adrons.ucoz.net</a></div>
+<div style="margin-bottom: 8px; text-align: left;"><a href="https://ucoz.net" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">spazint.ucoz.net</a></div>
+<div style="margin-bottom: 5px; text-align: left;"><a href="https://bitrix24site.ru" target="_blank" style="color: #63b3ed; font-weight: bold; text-decoration: underline; font-size: 13px;">spazint.bitrix24site.ru</a></div>
 
-<h2>Физическая природа Тёмной Материи и Тёмной Энергии</h2>
-<p>Вместо мифических сущностей ПЭММ дает Тёмной Материи и Тёмной Энергии четкое лептонное описание:</p>
-<ul>
-    <li><strong>Тёмная Материя</strong> — это океан нейтральных мюонов (μ⁰). Нейтральный мюон (масса 0,11288033 а.е.м.) является стабильным базисом вселенского субстрата. Он лишен электрического заряда, из-за чего не взаимодействует со светом и невидим для оптических приборов, но обладает реальной массой и удерживает галактики своим гравитационным потенциалом.</li>
-    <li><strong>Тёмная Энергия</strong> — это латентная среда гамма-частиц (¥). При сближении и жестком кулоновском контакте позитрона (e⁺) и электрона (e⁻) аннигиляции не происходит. Их внешние зарядовые оболочки замыкаются накоротко, образуя ультракомпактный нейтральный диполь — гамма-частицу (¥) размером ~0,0025 фм. Мириады этих невидимых диполей заполняют вакуум, создавая упругое давление Тёмной Энергии.</li>
-</ul>
-<div class="box">В стандартной модели нет темной материи (нейтральные мюоны), темную энергию (гамма-частицы) и квантовую материю (позитронные, электронные и гравитационные кванты), нет гравитации, охват реальной материи 0%.</div>
+<script>
+(function() {
+    const canvas1 = document.getElementById('pemmCanvas'); const ctx1 = canvas1.getContext('2d'); const info1 = document.getElementById('pemmInfo');
+    const canvas2 = document.getElementById('neutronCanvas'); const ctx2 = canvas2.getContext('2d'); const info2 = document.getElementById('neutronInfo');
+    
+    function resize() {
+        canvas1.width = canvas1.clientWidth; canvas1.height = canvas1.clientHeight;
+        canvas2.width = canvas2.clientWidth; canvas2.height = canvas2.clientHeight;
+    }
+    window.addEventListener('resize', resize);
+    
+    // ПРИНУДИТЕЛЬНЫЙ ВЫЗОВ ДЛЯ ЗАЩИТЫ ОТ КЭША И СПЛЮЩИВАНИЯ БРАУЗЕРА
+    setTimeout(resize, 50);
 
-<h2>Квантовая материя: позитронные и электронные кванты</h2>
-<p>Энергия в ПЭММ материальна. Пространство пронизано потоками дискретных субструктурных частиц гамма-квантов (фотоны) и магнитных диполей (радиоволна) состоящих из трех типов квантов: позитронными квантами (γ⁺), электронными квантами (γ⁻), гравитационными квантами (γ⁰).</p>
-<p>Зарядовая оболочка служит контейнером: позитрон удерживает внутри себя кванты γ⁺, электрон — кванты γ⁻, нейтральный мюон — кванты γ⁻. Кинетическая энергия и масса частицы — это буквальное количество набитой в её контейнер квантовой материи.</p>
+    const vertices = [
+        {x: -1, y: -1, z: -1, id: '1', col: '#1a73e8'}, {x: 1, y: -1, z: -1, id: '6', col: '#ff7b00'},
+        {x: 1, y: 1, z: -1, id: '4', col: '#d90429'}, {x: -1, y: 1, z: -1, id: '2', col: '#ffb703'},
+        {x: -1, y: -1, z: 1, id: '8', col: '#d90429'}, {x: 1, y: -1, z: 1, id: '7', col: '#70e000'},
+        {x: 1, y: 1, z: 1, id: '5', col: '#1a73e8'}, {x: -1, y: 1, z: 1, id: '3', col: '#70e000'}
+    ];
+    const edges =;
+    
+    let ax1 = 0.4, ay1 = 0.6, ax2 = 0.5, ay2 = -0.3;
+    const fs = 65;
+    let isD1 = false, isD2 = false;
+    let pm1 = {x:0, y:0}, pm2 = {x:0, y:0};
+    
+    canvas1.addEventListener('mousedown', e => { isD1 = true; pm1 = { x: e.clientX, y: e.clientY }; });
+    window.addEventListener('mouseup', () => { isD1 = false; isD2 = false; });
+    canvas1.addEventListener('mousemove', e => {
+        if (isD1) { ay1 += (e.clientX - pm1.x) * 0.01; ax1 += (e.clientY - pm1.y) * 0.01; pm1 = { x: e.clientX, y: e.clientY }; }
+    });
 
-<h2>Фундаментальные кирпичики Вселенной</h2>
-<p>Все процессы во Вселенной управляются тремя стабильными лептонами и тремя дискретными квантами их полей:</p>
-<ul>
-    <li><strong>Позитрон (e+):</strong> Базовая частица с целым положительным зарядом.</li>
-    <li><strong>Электрон (e-):</strong> Базовая частица с целым отрицательным зарядом.</li>
-    <li><strong>Нейтральный мюон (μ⁰):</strong> Стабильный носитель гравитационного заряда, формирующий скрытый океан Тёмной Материи.</li>
-    <li><strong>Позитронный квант (γ+):</strong> Дискретный носитель энергии и позитронного поля.</li>
-    <li><strong>Электронный квант (γ-):</strong> Дискретный носитель энергии и электронного поля.</li>
-    <li><strong>Гравитационный квант (γ⁰):</strong> Дискретный носитель гравитационного поля (тяготения).</li>
-</ul>
+    canvas2.addEventListener('mousedown', e => { isD2 = true; pm2 = { x: e.clientX, y: e.clientY }; });
+    canvas2.addEventListener('mousemove', e => {
+        if (isD2) { ay2 += (e.clientX - pm2.x) * 0.01; ax2 += (e.clientY - pm2.y) * 0.01; pm2 = { x: e.clientX, y: e.clientY }; }
+    });
 
-<h2>Магнетизм и природа Радиоволны</h2>
-<p>В ПЭММ полностью отвергается гипотеза о существовании магнитных монополей Дирака. Магнетизм — это следствие пространственного наложения объемных полей, когда гравитационный заряд (μ⁰) оказывается внутри электрического заряда лептона:</p>
-<ul>
-    <li><strong>Положительный мюон (μ+):</strong> Гравитационный заряд внутри позитрона (образует магнитный полюс «юг»).</li>
-    <li><strong>Отрицательный мюон (μ-):</strong> Гравитационный заряд внутри электрона (образует магнитный полюс «север»).</li>
-</ul>
-<p>Магнитный ток — это движение мюонных диполей. Радиоволна представляет собой механическую связку «электрический квант + гравитационный квант», что объединяет электричество и гравитацию в единый магнетизм.</p>
+    function pj(v, ax, ay, w, h) {
+        let x1 = v.x * Math.cos(ay) - v.z * Math.sin(ay); let z1 = v.x * Math.sin(ay) + v.z * Math.cos(ay);
+        let y2 = v.y * Math.cos(ax) - z1 * Math.sin(ax); let z2 = v.y * Math.sin(ax) + z1 * Math.cos(ax);
+        return { x: w/2 + x1 * fs, y: h/2 + y2 * fs, z: z2, id: v.id, col: v.col };
+    }
+
+    function drawModel(canvas, ctx, ax, ay, isProton) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const w = canvas.width, h = canvas.height;
+        const projected = vertices.map(v => pj(v, ax, ay, w, h));
+        
+        ctx.beginPath(); ctx.arc(w/2, h/2, fs*1.4, 0, 2*Math.PI);
+        let g = ctx.createRadialGradient(w/2, h/2, fs*0.3, w/2, h/2, fs*1.4);
+        g.addColorStop(0, isProton ? 'rgba(255,90,90,0.8)' : 'rgba(90,150,255,0.8)');
+        g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.fill();
+
+        ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+        for(let i=0; i<edges.length; i+=2) {
+            let p1 = projected[edges[i]], p2 = projected[edges[i+1]];
+            ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+        }
+
+        projected.sort((a,b) => b.z - a.z).forEach(p => {
+            ctx.beginPath(); ctx.arc(p.x, p.y, 14, 0, 2*Math.PI);
+            let mg = ctx.createRadialGradient(p.x-2, p.y-2, 2, p.x, p.y, 14);
+            mg.addColorStop(0, isProton ? '#ff8b8b' : '#8bceff'); 
+            mg.addColorStop(1, isProton ? '#5c0f0f' : '#0f315c');
+            ctx.fillStyle = mg; ctx.fill();
+            ctx.fillStyle = '#fff'; ctx.font = 'bold 9px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText(p.id, p.x, p.y + 3);
+        });
+    }
+
+    function animate() {
+        if (!isD1) ay1 += 0.002; if (!isD2) ay2 -= 0.002;
+        drawModel(canvas1, ctx1, ax1, ay1, true);
+        drawModel(canvas2, ctx2, ax2, ay2, false);
+        info1.innerHTML = 'Протон ПЭММ: Позитрон 0,833 фм, Керн 0,25 фм.';
+        info2.innerHTML = 'Нейтрон ПЭММ: Внешний электрон (100% заряда).';
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+</script>
 </ul>
     </div>
 </body>
