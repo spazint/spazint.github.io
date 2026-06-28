@@ -1,1 +1,711 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПОЗИТРОННО-ЭЛЕКТРОННО-МЮОННАЯ  МОДЕЛЬ (ПЭММ))</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.5; color: #4a5568; margin: 0; padding: 0; background-color: #f7fafc; width: 100%; }
+        .header { background-color: #3182ce; color: #fff; padding: 15px 30px; border-bottom: 3px solid #63b3ed; }
+        .title { font-size: 20px; font-weight: bold; margin: 0 0 5px 0; text-transform: uppercase; }
+        .meta { font-size: 12px; color: #ebf8ff; } .meta a { color: #fff; text-decoration: underline; }
+        .nav { background-color: #4a5568; padding: 8px 30px; display: flex; gap: 15px; border-bottom: 1px solid #2d3748; }
+        .nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 13px; } .nav a:hover { color: #90cdf4; }
+        
+        /* ТРЁХКОЛОНОЧНЫЙ КАРКАС НА ВЕСЬ ЭКРАН */
+        .layout-container { display: flex; padding: 20px 30px; gap: 20px; box-sizing: border-box; width: 100%; min-height: 80vh; }
+        
+        /* ЛЕВЫЙ ГАДЖЕТ (Для 3D моделей атомов) */
+        .sidebar-left { width: 300px; flex-shrink: 0; background-color: #111; color: #fff; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 13px; }
+        
+        /* ЦЕНТРАЛЬНАЯ КОЛОНКА (Для основного научного текста) */
+        .main-content { flex: 1; background-color: #fff; padding: 25px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        /* ПРАВЫЙ ГАДЖЕТ (Для навигации по сети сайтов) */
+        .sidebar-right { width: 300px; flex-shrink: 0; background-color: #fff; padding: 15px; border-radius: 6px; border: 1px dashed #777; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-size: 12px; }
+        
+        h1 { color: #3182ce; font-size: 18px; border-bottom: 2px solid #edf2f7; padding-bottom: 5px; margin: 0 0 15px 0; }
+        h2 { color: #4a5568; font-size: 15px; margin: 15px 0 10px 0; border-left: 4px solid #3182ce; padding-left: 8px; }
+        p { margin-bottom: 10px; font-size: 14px; } ul { padding-left: 15px; margin-bottom: 10px; } li { margin-bottom: 4px; }
+        .formula { font-family: 'Courier New', monospace; font-weight: bold; color: #c53030; background-color: #fff5f5; padding: 1px 3px; }
+        .right-title { font-weight: bold; background-color: #3182ce; color: #fff; padding: 4px; text-align: center; margin-bottom: 10px; font-family: monospace; }
+    </style>
+</head>
+<body>
 
+    <!-- ВЕРХНЯЯ ШАПКА САЙТА -->
+    <div class="header">
+        <div class="title">Вселенная >Позитронно-Электронно-Мюоная Модель (ПЭММ)</div>
+        <div class="meta">Владимир Балтрунас, инженер-физик (МИФИ) | ORCID: <a href="https://orcid.org" target="_blank">0009-0005-4567-9701</a> | ИСТИНА: 804488820</div>
+    </div>
+
+    <!-- ГОРИЗОНТАЛЬНОЕ МЕНЮ СТРАНИЦ -->
+ 
+<div class="nav"><a href="index.html">Главная</a> 
+<a href="proton.html">Протон</a>
+<a href="neutron.html">Нейтрон</a>
+<a href="vodorod.htm">Водород</a>
+<a href="deuterium.html">Дейтерий</a>  
+<a href="postulaty.html">8 Постулатов</a>
+<a href="dis.html">Эксперимент DIS</a>
+<a href="hofstadter.html">Хофштадтер</a>   
+<a href="Hadron jets PEMM.html">Адронные струи</a></div> 
+
+    <!-- ТРЕХКОЛОНОЧНЫЙ БЛОК -->
+    <div class="layout-container">
+
+        <!-- ЛЕВЫЙ ГАДЖЕТ: 3D МОДЕЛИ -->
+       
+     <table><tr><td>   
+<div style="font-family: 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.4; color: #111; background-color: #fcfcfc; padding: 12px; border: 1px dashed #777; margin-bottom: 15px;">
+    <div style="font-weight: bold; background-color: #005588; color: #fff; padding: 4px; text-align: center; margin-bottom: 12px; letter-spacing: 0.5px;">
+        НАВИГАЦИЯ ПО СЕТИ САЙТОВ ПЭММ
+    </div>
+      <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://spazint.github.io/10.5281-ZENODO.20038262/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">Репозиторий github.io</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://sites.google.com/view/spazint" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">sites.google.com/view/spazint</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://spazint.blogspot.com" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">spazint.blogspot.com</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://atom-mol.blogspot.com/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">atom-mol.blogspot.com</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://adrons.blogspot.com/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">adrons.blogspot.com</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://sun-pemm.blogspot.com/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">sun-pemm.blogspot.com</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://adrons.ucoz.net/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">adrons.ucoz.net</a>
+    </div>
+    <div style="margin-bottom: 6px; text-align: left;">
+        <a href="https://spazint.ucoz.net/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">spazint.ucoz.net</a>
+    </div>
+    <div style="margin-bottom: 2px; text-align: left;">
+        <a href="https://spazint.bitrix24site.ru/" target="_blank" style="color: #005588; font-weight: bold; text-decoration: underline;">spazint.bitrix24site.ru</a>
+    </div>
+</div>
+         
+        <div class="pemm-container" style="max-width: 300px; margin: 20px auto; font-family: 'Roboto', sans-serif; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+  <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 18px;">Строение протона в ПЭММ</h3>
+  <p style="font-size: 13px; color: #a0aec0; text-align: center; margin-bottom: 10px;">Вращайте куб мышкой. Наведите на мюоны для анализа углов полей.</p>
+  
+  <div style="position: relative; width: 100%; height: 350px; background: #0b0d11; border-radius: 6px; overflow: hidden;">
+    <canvas id="pemmCanvas" width="400" height="350" style="display: block; width: 100%; height: 100%; cursor: move;"></canvas>
+    <div id="pemmInfo" style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(22,27,34,0.9); padding: 8px 12px; border-radius: 4px; border: 1px solid #30363d; font-size: 13px; line-height: 1.4; pointer-events: none;">
+      <span style="color: #58a6ff; font-weight: bold;">Метрика:</span> Позитрон 0,833 фм, Керн 0,25 фм, Мюон 0,25 фм.
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('pemmCanvas');
+  const ctx = canvas.getContext('2d');
+  const infoEl = document.getElementById('pemmInfo');
+
+  function resize() {
+    const r = canvas.getBoundingClientRect();
+    canvas.width = r.width;
+    canvas.height = r.height;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // ОЧИСТИЛИ ИДЕНТИФИКАТОРЫ ОТ СИМВОЛА "№" — ОСТАВИЛИ ТОЛЬКО ЦИФРЫ 1-8
+  const vertices = [
+    {x: -1, y: -1, z: -1, id: '1', col: '#1a73e8'}, {x:  1, y: -1, z: -1, id: '6', col: '#ff7b00'},
+    {x:  1, y:  1, z: -1, id: '4', col: '#d90429'}, {x: -1, y:  1, z: -1, id: '2', col: '#ffb703'},
+    {x: -1, y: -1, z:  1, id: '8', col: '#d90429'}, {x:  1, y: -1, z:  1, id: '7', col: '#70e000'},
+    {x:  1, y:  1, z:  1, id: '5', col: '#1a73e8'}, {x: -1, y:  1, z:  1, id: '3', col: '#70e000'}
+  ];
+
+  const edges = [,,,,,,,,,,,];
+
+  let angleX = 0.4;
+  let angleY = 0.6;
+  
+  const fm_scale = 140;
+  let r_positron = 0.833 * fm_scale;    
+  let r_kern = 0.25 * fm_scale;         
+  let r_muon = 0.25 * fm_scale;         
+  let dist_muon_center = (2/3) * r_positron; 
+  
+  let scale = dist_muon_center / Math.sqrt(3);
+
+  let isDragging = false;
+  let previousMousePosition = { x: 0, y: 0 };
+  let hoveredVertex = -1;
+
+  canvas.addEventListener('mousedown', e => { isDragging = true; previousMousePosition = { x: e.clientX, y: e.clientY }; });
+  window.addEventListener('mouseup', () => isDragging = false);
+  
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    if (isDragging) {
+      const deltaX = e.clientX - previousMousePosition.x;
+      const deltaY = e.clientY - previousMousePosition.y;
+      angleY += deltaX * 0.01;
+      angleX += deltaY * 0.01;
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    } else {
+      hoveredVertex = -1;
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      
+      for (let i = 0; i < vertices.length; i++) {
+        const p = project(vertices[i], angleX, angleY, cx, cy);
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        if (dx*dx + dy*dy < (r_muon * r_muon)) { 
+          hoveredVertex = i;
+          break;
+        }
+      }
+      updateInfoText();
+    }
+  });
+
+  function project(vertex, angleX, angleY, cx, cy) {
+    let x1 = vertex.x * Math.cos(angleY) - vertex.z * Math.sin(angleY);
+    let z1 = vertex.x * Math.sin(angleY) + vertex.z * Math.cos(angleY);
+    let y2 = vertex.y * Math.cos(angleX) - z1 * Math.sin(angleX);
+    let z2 = vertex.y * Math.sin(angleX) + z1 * Math.cos(angleX);
+    return { x: cx + x1 * scale, y: cy + y2 * scale, z: z2, id: vertex.id, col: vertex.col };
+  }
+
+  function updateInfoText() {
+    if (hoveredVertex !== -1) {
+      infoEl.innerHTML = `<span style="color:#ffb703; font-weight:bold;">Магнитный вектор №${vertices[hoveredVertex].id}:</span> Пространственные углы полей:<br>` +
+                         `• К соседнему мюону через ребро куба: <b style="color:#4dadff">70.53°</b><br>` +
+                         `• По диагонали грани каркаса: <b style="color:#4dadff">109.47°</b><br>` +
+                         `• Сквозная диагональ через центр: <b style="color:#4dadff">180.00°</b>`;
+    } else {
+      infoEl.innerHTML = `<span style="color: #ff4a4a; font-weight: bold;">Параметры ПЭММ:</span> Позитрон (0.833 фм) включает керн (0.25 фм) и 8 крупных мюонов по 0.25 фм.`;
+    }
+  }
+
+  function drawKern(ctx, cx, cy, r) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+    ctx.clip();
+    
+    let size = 4; 
+    for (let i = cx - r; i < cx + r; i += size) {
+      for (let j = cy - r; j < cy + r; j += size) {
+        let xi = Math.floor((i - cx) / size);
+        let yi = Math.floor((j - cy) / size);
+        if ((xi + yi) % 2 === 0) {
+          ctx.fillStyle = '#ff2a2a';
+        } else {
+          ctx.fillStyle = '#1a73e8';
+        }
+        ctx.fillRect(i, j, size, size);
+      }
+    }
+    ctx.restore();
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+
+    const projected = vertices.map(v => project(v, angleX, angleY, cx, cy));
+
+    let renderElements = [];
+    projected.forEach((p, idx) => {
+      renderElements.push({ type: 'muon', z: p.z, data: p, idx: idx });
+    });
+    renderElements.push({ type: 'kern', z: 0 });
+    renderElements.sort((a, b) => b.z - a.z);
+
+// Сфера позитрона — Идеальное попадание
+    ctx.beginPath();
+    
+    // Слегка увеличили с 1.12 до 1.21
+    let visual_r_positron = r_positron * 1.21; 
+    
+    ctx.arc(cx, cy, visual_r_positron, 0, 2 * Math.PI); 
+    
+    let gradient = ctx.createRadialGradient(cx, cy, r_kern, cx, cy, visual_r_positron);
+    gradient.addColorStop(0, 'rgba(255, 90, 90, 0.85)');   // Насыщенный центр
+    gradient.addColorStop(0.5, 'rgba(255, 74, 74, 0.30)');  // Полупрозрачное тело
+    gradient.addColorStop(1, 'rgba(255, 74, 74, 0.10)');    // 10% яркости на самом краю
+    
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    // Ребра
+    ctx.lineWidth = 1;
+    edges.forEach(edge => {
+      ctx.beginPath();
+      ctx.moveTo(projected[edge].x, projected[edge].y);
+      ctx.lineTo(projected[edge].x, projected[edge].y);
+      ctx.strokeStyle = (hoveredVertex === edge || hoveredVertex === edge) ? '#ffb703' : 'rgba(255,255,255,0.1)';
+      ctx.stroke();
+    });
+
+    // Отрисовка Z-буфера
+    renderElements.forEach(item => {
+      if (item.type === 'kern') {
+        drawKern(ctx, cx, cy, r_kern);
+        ctx.beginPath();
+        ctx.arc(cx, cy, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = '#ffea00';
+        ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      } 
+      else if (item.type === 'muon') {
+        let p = item.data;
+
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        let targetX = cx + (p.x - cx) * 2.8; 
+        let targetY = cy + (p.y - cy) * 2.8;
+        ctx.lineTo(targetX, targetY);
+        
+        ctx.strokeStyle = item.idx === hoveredVertex ? '#ffea00' : p.col;
+        ctx.lineWidth = item.idx === hoveredVertex ? 3.5 : 1.5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 45, 0, 2 * Math.PI);
+        
+        let mGradient = ctx.createRadialGradient(p.x - r_muon*0.2, p.y - r_muon*0.2, r_muon*0.1, p.x, p.y, r_muon);
+        mGradient.addColorStop(0, '#ff6b6b');
+        mGradient.addColorStop(0.8, '#8a1c1c');
+        mGradient.addColorStop(1, '#5c0f0f');
+        
+        ctx.fillStyle = item.idx === hoveredVertex ? '#ffb703' : mGradient;
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+        ctx.stroke();
+
+        // СЮДА ВЫВОДИТСЯ СТРОГО ЧИСТАЯ ЦИФРА
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 10px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(p.id, p.x, p.y + 3.5);
+      }
+    });
+
+    if (!isDragging) {
+      angleY += 0.002;
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+         
+<div class="pemm-container" style="max-width: 300px; margin: 20px auto; font-family: 'Roboto', sans-serif; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+ <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 18px;">Строение нейтрона в ПЭММ</h3>
+ <p style="font-size: 13px; color: #a0aec0; text-align: center; margin-bottom: 10px;">Вращайте куб мышкой. Наведите на мюоны для анализа магнитных полюсов СЕВЕР.</p>
+ 
+ <div style="position: relative; width: 100%; height: 350px; background: #0b0d11; border-radius: 6px; overflow: hidden;">
+ <canvas id="pemmCanvasNeutron" width="500" height="350" style="display: block; width: 100%; height: 100%; cursor: move;"></canvas>
+ <div id="pemmInfoNeutron" style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(22,27,34,0.9); padding: 8px 12px; border-radius: 4px; border: 1px solid #30363d; font-size: 13px; line-height: 1.4; pointer-events: none;">
+ <span style="color: #58a6ff; font-weight: bold;">Метрика нейтрона:</span> Куб мюонов (синие), Керн (35% заряда позитрона), Внешний электрон (100% заряда снаружи).
+ </div>
+ </div>
+</div>
+<script>
+(function() {
+ const canvasN = document.getElementById('pemmCanvasNeutron');
+ const ctxN = canvasN.getContext('2d');
+ const infoElN = document.getElementById('pemmInfoNeutron');
+ function resizeN() {
+ const r = canvasN.getBoundingClientRect();
+ canvasN.width = r.width;
+ canvasN.height = r.height;
+ }
+ window.addEventListener('resize', resizeN);
+ resizeN();
+
+ const verticesN = [
+ {x: -1, y: -1, z: -1, id: '1', col: '#1a73e8'}, {x: 1, y: -1, z: -1, id: '6', col: '#0055ff'},
+ {x: 1, y: 1, z: -1, id: '4', col: '#0022aa'}, {x: -1, y: 1, z: -1, id: '2', col: '#4dadff'},
+ {x: -1, y: -1, z: 1, id: '8', col: '#0033cc'}, {x: 1, y: -1, z: 1, id: '7', col: '#1e3d59'},
+ {x: 1, y: 1, z: 1, id: '5', col: '#1a73e8'}, {x: -1, y: 1, z: 1, id: '3', col: '#45f3ff'}
+ ];
+ 
+ // ТРЮК: Создаем ребра через строку, чтобы Blogger не вырезал массив
+ const edgesStr = "0,1,1,2,2,3,3,0,4,5,5,6,6,7,7,4,0,4,1,5,2,6,3,7";
+ const edgesN = edgesStr.split(",").map(Number);
+ 
+ let angleXN = 0.4;
+ let angleYN = 0.6;
+ 
+ const fm_scaleN = 140;
+ let r_positronN = 0.833 * fm_scaleN; 
+ let r_kernN = 0.25 * fm_scaleN; 
+ let r_muonN = 0.25 * fm_scaleN; 
+ let dist_muon_centerN = (2/3) * r_positronN; 
+ 
+ let scaleN = dist_muon_centerN / Math.sqrt(3);
+ let isDraggingN = false;
+ let previousMousePositionN = { x: 0, y: 0 };
+ let hoveredVertexN = -1;
+
+ canvasN.addEventListener('mousedown', e => { isDraggingN = true; previousMousePositionN = { x: e.clientX, y: e.clientY }; });
+ window.addEventListener('mouseup', () => isDraggingN = false);
+ 
+ canvasN.addEventListener('mousemove', e => {
+ const rect = canvasN.getBoundingClientRect();
+ const mouseX = e.clientX - rect.left;
+ const mouseY = e.clientY - rect.top;
+ if (isDraggingN) {
+ const deltaX = e.clientX - previousMousePositionN.x;
+ const deltaY = e.clientY - previousMousePositionN.y;
+ angleYN += deltaX * 0.01;
+ angleXN += deltaY * 0.01;
+ previousMousePositionN = { x: e.clientX, y: e.clientY };
+ } else {
+ hoveredVertexN = -1;
+ const cx = canvasN.width / 2;
+ const cy = canvasN.height / 2;
+ 
+ for (let i = 0; i < verticesN.length; i++) {
+ const p = projectN(verticesN[i], angleXN, angleYN, cx, cy);
+ const dx = mouseX - p.x;
+ const dy = mouseY - p.y;
+ if (dx*dx + dy*dy < (r_muonN * r_muonN)) { 
+ hoveredVertexN = i;
+ break;
+ }
+ }
+ }
+ updateInfoTextN();
+ });
+
+ function projectN(vertex, angleX, angleY, cx, cy) {
+ let x1 = vertex.x * Math.cos(angleY) - vertex.z * Math.sin(angleY);
+ let z1 = vertex.x * Math.sin(angleY) + vertex.z * Math.cos(angleY);
+ let y2 = vertex.y * Math.cos(angleX) - z1 * Math.sin(angleX);
+ let z2 = vertex.y * Math.sin(angleX) + z1 * Math.cos(angleX);
+ return { x: cx + x1 * scaleN, y: cy + y2 * scaleN, z: z2, id: vertex.id, col: vertex.col };
+ }
+
+ function updateInfoTextN() {
+ if (hoveredVertexN !== -1) {
+ infoElN.innerHTML = `<span style="color:#45f3ff; font-weight:bold;">Магнитный вектор №${verticesN[hoveredVertexN].id} (СЕВЕР):</span> Пространственные полярные углы полей:<br>` +
+ `• К соседнему синему мюону куба: <b style="color:#4dadff">70.53°</b><br>` +
+ `• По диагонали грани мюонного каркаса: <b style="color:#4dadff">109.47°</b><br>` +
+ `• Сквозная диагональ ядра на ЮГ: <b style="color:#4dadff">180.00°</b>`;
+ } else {
+ infoElN.innerHTML = `<span style="color: #45f3ff; font-weight: bold;">Параметры Нейтрона:</span> Позитрон удерживает керн (35% заряда), внешний электрон вынесен на увеличенный радиус за счет площади керна.`;
+ }
+ }
+
+ function drawKernN(ctx, cx, cy, r) {
+ ctx.save();
+ ctx.beginPath();
+ ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+ ctx.clip();
+ let size = 4; 
+ for (let i = cx - r; i < cx + r; i += size) {
+ for (let j = cy - r; j < cy + r; j += size) {
+ let xi = Math.floor((i - cx) / size);
+ let yi = Math.floor((j - cy) / size);
+ if ((xi + yi) % 2 === 0) {
+ ctx.fillStyle = '#ff2a2a';
+ } else {
+ ctx.fillStyle = '#1a73e8';
+ }
+ ctx.fillRect(i, j, size, size);
+ }
+ }
+ ctx.restore();
+ ctx.beginPath();
+ ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+ ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+ ctx.lineWidth = 1;
+ ctx.stroke();
+ }
+
+ function drawN() {
+ ctxN.clearRect(0, 0, canvasN.width, canvasN.height);
+ const cx = canvasN.width / 2;
+ const cy = canvasN.height / 2;
+ const projected = verticesN.map(v => projectN(v, angleXN, angleYN, cx, cy));
+ let renderElements = [];
+ projected.forEach((p, idx) => {
+ renderElements.push({ type: 'muon', z: p.z, data: p, idx: idx });
+ });
+ renderElements.push({ type: 'kern', z: 0 });
+ renderElements.sort((a, b) => b.z - a.z);
+
+ ctxN.beginPath();
+ ctxN.arc(cx, cy, r_positronN, 0, 2 * Math.PI); 
+ let gradient = ctxN.createRadialGradient(cx, cy, r_kernN, cx, cy, r_positronN);
+ gradient.addColorStop(0, 'rgba(69, 243, 255, 0.12)');
+ gradient.addColorStop(0.8, 'rgba(26, 115, 232, 0.25)');
+ gradient.addColorStop(1, 'rgba(0, 85, 255, 0.03)');
+ ctxN.fillStyle = gradient;
+ ctxN.fill();
+
+ ctxN.beginPath();
+ ctxN.arc(cx, cy, r_positronN + 30, 0, 2 * Math.PI);
+ ctxN.strokeStyle = 'rgba(0, 85, 255, 0.4)';
+ ctxN.lineWidth = 2;
+ ctxN.stroke();
+
+ ctxN.lineWidth = 1;
+ for (let i = 0; i < edgesN.length; i += 2) {
+ const start = projected[edgesN[i]];
+ const end = projected[edgesN[i+1]];
+ if (start && end) {
+ ctxN.beginPath();
+ ctxN.moveTo(start.x, start.y);
+ ctxN.lineTo(end.x, end.y);
+ ctxN.strokeStyle = (hoveredVertexN === edgesN[i] || hoveredVertexN === edgesN[i+1]) ? '#ffea00' : 'rgba(69, 243, 255, 0.25)';
+ ctxN.stroke();
+ }
+ }
+
+ renderElements.forEach(item => {
+ if (item.type === 'kern') {
+ drawKernN(ctxN, cx, cy, r_kernN);
+ ctxN.beginPath();
+ ctxN.arc(cx, cy, 5, 0, 2 * Math.PI);
+ ctxN.fillStyle = '#ffea00'; 
+ ctxN.fill();
+ ctxN.strokeStyle = '#fff';
+ ctxN.lineWidth = 0.5;
+ ctxN.stroke();
+ } 
+ else if (item.type === 'muon') {
+ let p = item.data;
+ ctxN.beginPath();
+ ctxN.moveTo(p.x, p.y);
+ let targetX = cx + (p.x - cx) * 2.8; 
+ let targetY = cy + (p.y - cy) * 2.8;
+ ctxN.lineTo(targetX, targetY);
+ 
+ ctxN.strokeStyle = item.idx === hoveredVertexN ? '#ffea00' : p.col;
+ ctxN.lineWidth = item.idx === hoveredVertexN ? 3.5 : 1.5;
+ ctxN.stroke();
+
+ ctxN.beginPath();
+ ctxN.arc(p.x, p.y, 45, 0, 2 * Math.PI);
+ let mGradient = ctxN.createRadialGradient(p.x - r_muonN*0.2, p.y - r_muonN*0.2, r_muonN*0.1, p.x, p.y, r_muonN);
+ mGradient.addColorStop(0, '#66fcf1'); 
+ mGradient.addColorStop(0.8, '#1e3d59');
+ mGradient.addColorStop(1, '#0f172a');
+ 
+ ctxN.fillStyle = item.idx === hoveredVertexN ? '#ffea00' : mGradient;
+ ctxN.fill();
+ ctxN.strokeStyle = 'rgba(255,255,255,0.3)';
+ ctxN.stroke();
+
+ ctxN.fillStyle = '#ffffff';
+ ctxN.font = 'bold 10px sans-serif';
+ ctxN.textAlign = 'center';
+ ctxN.fillText(p.id, p.x, p.y + 3.5);
+ }
+ });
+
+ if (!isDraggingN) {
+ angleYN += 0.002;
+ }
+ requestAnimationFrame(drawN);
+ }
+ drawN();
+})();
+</script>  
+<div class="pemm-calc" style="max-width: 600px; margin: 5px auto; font-family: 'Roboto', sans-serif; background: #11141a; border: 1px solid #2c3440; border-radius: 8px; padding: 15px; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.5); pointer-events: auto !important;">
+  <h3 style="margin-top: 0; text-align: center; color: #4dadff; font-size: 15px; margin-bottom: 12px;">Материальный анализатор масс ПЭММ</h3>
+  
+  <!-- ИСПРАВЛЕН ТЕКСТ НА РУССКИЙ -->
+  <div style="margin-bottom: 10px; pointer-events: auto !important;">
+    <label style="display: block; font-size: 11px; color: #a0aec0; margin-bottom: 4px;">Истинная масса адрона (в а.е.м.):</label>
+    <input type="text" id="inputMassAem" value="0.53061214" style="width: 100%; padding: 5px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; box-sizing: border-box; font-size: 13px; font-weight: bold; pointer-events: auto !important; position: relative; z-index: 99999;" />
+    <div style="font-size: 10px; color: #718096; margin-top: 3px; text-align: right;">
+      Эквивалент деформации полей: <span id="valMev" style="color: #4dadff;">...</span> МэВ
+    </div>
+  </div>
+
+  <div style="margin-bottom: 12px; display: flex; gap: 10px; pointer-events: auto !important;">
+    <div style="flex: 1;">
+      <label style="display: block; font-size: 10px; color: #a0aec0; margin-bottom: 3px;">Позитроны (+):</label>
+      <select id="selectPlus" style="width: 100%; padding: 4px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; font-size: 12px; pointer-events: auto !important; position: relative; z-index: 99999;">
+        <option value="1" selected />1 (Есть)
+        <option value="0" />0 (Нет)
+      </select>
+    </div>
+    <div style="flex: 1;">
+      <label style="display: block; font-size: 10px; color: #a0aec0; margin-bottom: 3px;">Электроны (-):</label>
+      <select id="selectMinus" style="width: 100%; padding: 4px; border-radius: 4px; border: 1px solid #30363d; background: #0b0d11; color: #fff; font-size: 12px; pointer-events: auto !important; position: relative; z-index: 99999;">
+        <option value="0" selected />0 (Нет)
+        <option value="1" />1 (Есть)
+      </select>
+    </div>
+  </div>
+
+  <!-- СОСТАВ -->
+  <div style="background: #0b0d11; border: 1px solid #2c3440; padding: 10px; border-radius: 6px; margin-bottom: 12px;">
+    <div style="color: #58a6ff; font-size: 11px; font-weight: bold; margin-bottom: 6px; text-align: center; border-bottom: 1px solid #222; padding-bottom: 4px;">Дискретный субатомный состав:</div>
+    
+    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px;">
+      <span>Лептоны заряда (<b>n₃</b>, e<sup>&plusmn;</sup>):</span>
+      <span id="resN3" style="color: #fff; font-weight: bold;">0</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px;">
+      <span>Нейтральные мюоны (<b>n₁</b>, &mu;⁰):</span>
+      <span id="resN1" style="color: #ffb703; font-weight: bold;">0</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 12px;">
+      <span>Гамма-частицы (<b>n₂</b>, &yen;):</span>
+      <span id="resN2" style="color: #ffb703; font-weight: bold;">0</span>
+    </div>
+  </div>
+
+  <!-- ВЫЧИСЛЕННАЯ ЭНЕРГИЯ ВИРТУАЛЬНОГО ФОТОНА -->
+  <div style="background: rgba(255, 234, 0, 0.08); border: 1px solid rgba(255, 234, 0, 0.3); padding: 8px; border-radius: 4px; text-align: center; font-size: 13.5px; font-weight: bold; color: #ffea00; margin-bottom: 12px;">
+    Виртуальный фотон: <span id="resPhotonMev">...</span> МэВ
+    <div style="font-size: 10px; color: #a0aec0; font-weight: normal; margin-top: 2px;">
+      (Материальный остаток полей: <span id="resPhotonAem">...</span> а.е.м.)
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid #30363d; padding-top: 8px; font-size: 10.5px; color: #a0aec0; line-height: 1.4;">
+    <span style="color: #4dadff; font-weight: bold;">Прецизионные константы ПЭММ (а.е.м.):</span><br />
+    • m<sub>e</sub> = 0.0005458310 | • m<sub>&mu;</sub> = 0.1128803326 | • m<sub>&gamma;</sub> = 0.0010971602
+  </div>
+</div>
+
+<script>
+(function() {
+  // Заложены прецизионные константы до последнего знака
+  const m_e_aem   = 0.0005458310; 
+  const m_mu_aem  = 0.1128803326; 
+  const m_yen_aem = 0.0010971602; 
+  const aem_to_mev = 931.49432;
+
+  const inputAem = document.getElementById('inputMassAem');
+  const txtMev = document.getElementById('valMev');
+  const selPlus = document.getElementById('selectPlus');
+  const selMinus = document.getElementById('selectMinus');
+  
+  const outN1 = document.getElementById('resN1');
+  const outN2 = document.getElementById('resN2');
+  const outN3 = document.getElementById('resN3');
+  const outPhotMev = document.getElementById('resPhotonMev');
+  const outPhotAem = document.getElementById('resPhotonAem');
+
+  function analyze() {
+    let cleanInput = inputAem.value.replace(/,/g, '.').replace(/\s/g, '');
+    let mass_aem = parseFloat(cleanInput) || 0;
+    
+    let mass_mev = mass_aem * aem_to_mev;
+    txtMev.innerText = mass_mev.toFixed(5);
+
+    let n3 = (parseInt(selPlus.value) || 0) + (parseInt(selMinus.value) || 0);
+    let mass_minus_letons = mass_aem - (m_e_aem * n3);
+
+    // Добавлена микроскопическая поправка на погрешность округления чисел с плавающей точкой в JS
+    let n1 = Math.floor((mass_minus_letons + 1e-9) / m_mu_aem);
+    if (n1 < 0) n1 = 0;
+
+    let remainder_after_mu = mass_minus_letons - (n1 * m_mu_aem);
+    let n2 = Math.floor((remainder_after_mu + 1e-9) / m_yen_aem);
+    if (n2 < 0) n2 = 0;
+
+    let photon_aem = remainder_after_mu - (n2 * m_yen_aem);
+    let photon_mev = photon_aem * aem_to_mev;
+
+    outN3.innerText = n3;
+    outN1.innerText = n1;
+    outN2.innerText = n2;
+    
+    outPhotMev.innerText = photon_mev.toFixed(8);
+    outPhotAem.innerText = photon_aem.toFixed(10);
+  }
+
+  [inputAem, selPlus, selMinus].forEach(el => {
+    el.addEventListener('input', analyze);
+    el.addEventListener('change', analyze);
+  });
+  analyze();
+})();
+</script>
+     
+</td></tr></table>
+</td>
+
+        
+        
+<!-- ЦЕНТРАЛЬНАЯ ЧАСТЬ: СТАТЬИ И ТЕКСТ -->
+<main class="main-content">
+<div style="display: block !important; width: 100% !important; clear: both !important; text-align: left !important;">       
+
+<h1>Позитронно-Электронно-Мюонная Модель (ПЭММ): Фундаментальный Чертеж Вселенной</h1>
+<p>Позитронно-Электронно-Мюонная Модель (ПЭММ) — это физическая модель, описывающая материальное устройство микро- и макромира. Модель полностью отвергает существование дробных кварков, нематериальных «глюонных полей» и концепцию «Большого взрыва». Вселенная материальна на всех уровнях: пустоты или «чистой энергии» без физического материального носителя не существует.</p>
+
+<h2>Закон сохранения энергии: Материя не превращается в энергию</h2>
+<p>Концепция «аннигиляции» лептонов в ПЭММ опровергнута. При жестком сжатии позитрона (e+) и электрона (e-) материя не уничтожается. Происходит образование нейтрального электрического диполя — гамма-частицы (¥), с полным сохранением исходного заряда и массы. Выделяющаяся энергия — это упругая энергия связи полей.</p>
+
+<h2>Отказ от гипотезы «Большого взрыва» и динамическая Вселенная</h2>
+<p>В ПЭММ концепция «Большого взрыва» и расширения самого пространства полностью отвергается как математическая фикция. Вселенная бесконечна во времени, стационарна и представляет собой вечный круговорот дискретных материальных частиц.</p>
+<p>Космологическое красное смещение — это не свидетельство «разлета галактик», а естественный физический процесс старения света и потери им энергии при механическом трении о корпускулярную среду вакуума на межгалактических расстояниях. Время вечно, а материя циркулирует через локальные очаги накопления, прессования и сброса.</p>
+
+<h2>Модель циклической эволюции материи во Вселенной</h2>
+<p>Вместо единичного акта творения, ПЭММ описывает непрерывный круговорот материи через локальные очаги активности — звезды и черные дыры:</p>
+<ol>
+    <li><strong>Аккреция и накопление:</strong> Черные дыры стягивают на себя окружающую темную материю (нейтральные мюоны), темную энергию (гамма-частицы) и квантовую материю (позитронные, электронные и гравитационные кванты).</li>
+    <li><strong>Критическая точка (Локальный взрыв):</strong> Когда количество накопленной квантовой материи и синтезированных нуклонов достигает предела, дефект положительного заряда в протонах (даже при значении 10⁻¹⁰) создает избыточное кулоновское давление и происходит взрыв черной дыры.</li>
+    <li><strong>Сверхновая:</strong> Кулоновское отталкивание преодолевает гравитацию, и происходит взрыв черной дыры, который разбрасывает новообразованную материю в пространство. Из выброшенного в результате взрыва сверхновой звезды материи образуются галактики и звездные системы.</li>
+    <li><strong>Фаза синтеза:</strong> Внутри этих сверхплотных объектов - звезд идет процесс «выгорания» темной энергии, темной материи и квантовой материи — синтез нейтронов и протонов. Когда топливо кончается, звезды гаснут и галактика становится мусором для очередной черной дыры.</li>
+    <li><strong>Повторение цикла:</strong> Выброшенная материя снова собирается воедино и становится строительным материалом для очередной новой звезды.</li>
+</ol>
+
+<h2>Физическая природа Тёмной Материи и Тёмной Энергии</h2>
+<p>Вместо мифических сущностей ПЭММ дает Тёмной Материи и Тёмной Энергии четкое лептонное описание:</p>
+<ul>
+    <li><strong>Тёмная Материя</strong> — это океан нейтральных мюонов (μ⁰). Нейтральный мюон (масса 0,11288033 а.е.м.) является стабильным базисом вселенского субстрата. Он лишен электрического заряда, из-за чего не взаимодействует со светом и невидим для оптических приборов, но обладает реальной массой и удерживает галактики своим гравитационным потенциалом.</li>
+    <li><strong>Тёмная Энергия</strong> — это латентная среда гамма-частиц (¥). При сближении и жестком кулоновском контакте позитрона (e⁺) и электрона (e⁻) аннигиляции не происходит. Их внешние зарядовые оболочки замыкаются накоротко, образуя ультракомпактный нейтральный диполь — гамма-частицу (¥) размером ~0,0025 фм. Мириады этих невидимых диполей заполняют вакуум, создавая упругое давление Тёмной Энергии.</li>
+</ul>
+<div class="box">В стандартной модели нет темной материи (нейтральные мюоны), темную энергию (гамма-частицы) и квантовую материю (позитронные, электронные и гравитационные кванты), нет гравитации, охват реальной материи 0%.</div>
+
+<h2>Квантовая материя: позитронные и электронные кванты</h2>
+<p>Энергия в ПЭММ материальна. Пространство пронизано потоками дискретных субструктурных частиц гамма-квантов (фотоны) и магнитных диполей (радиоволна) состоящих из трех типов квантов: позитронными квантами (γ⁺), электронными квантами (γ⁻), гравитационными квантами (γ⁰).</p>
+<p>Зарядовая оболочка служит контейнером: позитрон удерживает внутри себя кванты γ⁺, электрон — кванты γ⁻, нейтральный мюон — кванты γ⁻. Кинетическая энергия и масса частицы — это буквальное количество набитой в её контейнер квантовой материи.</p>
+
+<h2>Фундаментальные кирпичики Вселенной</h2>
+<p>Все процессы во Вселенной управляются тремя стабильными лептонами и тремя дискретными квантами их полей:</p>
+<ul>
+    <li><strong>Позитрон (e+):</strong> Базовая частица с целым положительным зарядом.</li>
+    <li><strong>Электрон (e-):</strong> Базовая частица с целым отрицательным зарядом.</li>
+    <li><strong>Нейтральный мюон (μ⁰):</strong> Стабильный носитель гравитационного заряда, формирующий скрытый океан Тёмной Материи.</li>
+    <li><strong>Позитронный квант (γ+):</strong> Дискретный носитель энергии и позитронного поля.</li>
+    <li><strong>Электронный квант (γ-):</strong> Дискретный носитель энергии и электронного поля.</li>
+    <li><strong>Гравитационный квант (γ⁰):</strong> Дискретный носитель гравитационного поля (тяготения).</li>
+</ul>
+
+<h2>Магнетизм и природа Радиоволны</h2>
+<p>В ПЭММ полностью отвергается гипотеза о существовании магнитных монополей Дирака. Магнетизм — это следствие пространственного наложения объемных полей, когда гравитационный заряд (μ⁰) оказывается внутри электрического заряда лептона:</p>
+<ul>
+    <li><strong>Положительный мюон (μ+):</strong> Гравитационный заряд внутри позитрона (образует магнитный полюс «юг»).</li>
+    <li><strong>Отрицательный мюон (μ-):</strong> Гравитационный заряд внутри электрона (образует магнитный полюс «север»).</li>
+</ul>
+<p>Магнитный ток — это движение мюонных диполей. Радиоволна представляет собой механическую связку «электрический квант + гравитационный квант», что объединяет электричество и гравитацию в единый магнетизм.</p>
+</ul>
+    </div>
+</body>
+</html>
